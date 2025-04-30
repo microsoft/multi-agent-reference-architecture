@@ -4,3 +4,8 @@ Enterprise-ready reference architecture for building scalable multi-agent system
 ## Architecture
 
 ![Architecture Diagram](./docs/Multi-Agent-Architecture.drawio.svg)
+
+## Sequence diagrams
+
+[Agent Registration Sequence Diagram](./docs/Multi-Agent-AgentRegistration-SequenceDiagram.md)
+
