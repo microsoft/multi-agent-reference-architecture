@@ -9,4 +9,4 @@ Enterprise-ready reference architecture for building scalable multi-agent system
 
 [Agent Registration Sequence Diagram](./docs/Multi-Agent-AgentRegistration-SequenceDiagram.md)
 
-[Conversational Sequence Diagram](./docs/Multi-Agent-AgentRegistration-SequenceDiagram.md)
+[Conversational Sequence Diagram](./docs/Multi-Agent-Conversational-SequenceDiagram.md)
