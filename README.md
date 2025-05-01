@@ -11,8 +11,7 @@ and [Microsoft Developers Blog](https://devblogs.microsoft.com/) just to list a 
 In a way we felt obligated to contribute back with learnings we were able to collect while implementing different [Agentic AI Systems](https://techcommunity.microsoft.com/blog/machinelearningblog/baseline-agentic-ai-systems-architecture/4207137)
 and most recently Multi-Agent Systems (MAS).
 
-The architecture is embodying actual project implementations
-being executed by different teams at Microsoft.
+The architecture is embodying actual project implementations being executed by different teams at Microsoft.
 
 ![Architecture Diagram](./docs/Multi-Agent-Architecture.drawio.svg)
 
