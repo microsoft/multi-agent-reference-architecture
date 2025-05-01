@@ -13,6 +13,12 @@ and most recently Multi-Agent Systems (MAS).
 
 The architecture is embodying actual project implementations being executed by different teams at Microsoft.
 
+>Every week there are something new to consider on Generative AI space; 
+new models, new toolset, new approaches and new threads. 
+One of our goals were to have a generic architecture that 
+will allow the onboarding of new concepts, but eventually 
+we will be making some changes.
+
 ![Architecture Diagram](./docs/Multi-Agent-Architecture.drawio.svg)
 
 ## Sequence diagrams
