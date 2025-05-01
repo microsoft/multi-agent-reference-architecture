@@ -1,0 +1,18 @@
+{
+    "markdownFormatter.enable": true,
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.renderWhitespace": "all",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+        "editor.snippetSuggestions": "top",
+        "editor.tabCompletion": "on",
+        "editor.acceptSuggestionOnEnter": "on",
+        "editor.defaultFormatter": "mervin.markdown-formatter",
+        "editor.rulers": [80],
+        "editor.wordWrapColumn": 80,
+    }
+}
