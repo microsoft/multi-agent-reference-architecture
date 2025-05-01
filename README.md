@@ -5,7 +5,7 @@ Enterprise-ready reference architecture for building scalable multi-agent system
 ## Architecture
 
 We extensively utilize patterns and reference architectures
-from internal sources like; [Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/), [Azure Architecture Blog](https://techcommunity.microsoft.com/category/azure/blog/azurearchitectureblog) and [Microsoft Developers Blog](https://devblogs.microsoft.com/)
+from internal sources like, [Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/), [Azure Architecture Blog](https://techcommunity.microsoft.com/category/azure/blog/azurearchitectureblog) and [Microsoft Developers Blog](https://devblogs.microsoft.com/)
 just to list a few and external sources as well; [Martin Fowler](https://martinfowler.com/architecture/), which we consider an invaluable resource, and many others. 
 In a way we felt obligated to contribute back with learnings we were able to 
 collect while implementing different [Agentic AI Systems](https://techcommunity.microsoft.com/blog/machinelearningblog/baseline-agentic-ai-systems-architecture/4207137)
