@@ -58,3 +58,15 @@ List of patterns that guided the proposed architecture.
 8. Conversation-Aware Agent Orchestration (Contextual state + history memory)
 9. Agent to Agent communication
     [Agent to Agent Communication Patterns](./docs/Multi-Agent-Agent-to-Agent-Patterns-SequenceDiagram.md)
+
+## Security Principles
+
+Security is embedded into the architecture at every layer—from identity enforcement
+and data protection to policy-controlled agent execution. A detailed breakdown
+is provided in the [Security Architecture Guide](./docs/Multi-Agent-Security.md).
+
+Key considerations include:
+- Identity-bound orchestration and agent execution.
+- Registry authorization and capability scoping.
+- Data retention policies tied to storage layers.
+- Tool execution mediated through policy-controlled MCP integration.
