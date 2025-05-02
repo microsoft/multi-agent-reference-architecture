@@ -33,11 +33,12 @@ of new models, tools, and communication patterns.
 
 ## Sequence diagrams
 
-For better understanding there are a set of sequence diagrams that covers:
+To support a clearer understanding of the architecture, the following
+sequence diagrams illustrate key interactions:
 
-[Agent Registration Sequence Diagram](./docs/Multi-Agent-AgentRegistration-SequenceDiagram.md)
-
-[Conversational Sequence Diagram](./docs/Multi-Agent-Conversational-SequenceDiagram.md)
+* [Agent Registration Sequence Diagram](./docs/Multi-Agent-AgentRegistration-SequenceDiagram.md)
+* [Conversational Sequence Diagram](./docs/Multi-Agent-Conversational-SequenceDiagram.md)
+* [Agent to Agent Communication Patterns](./docs/Multi-Agent-Agent-to-Agent-Patterns-SequenceDiagram.md)
 
 ## Patterns
 
