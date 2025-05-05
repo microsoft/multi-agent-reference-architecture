@@ -31,14 +31,12 @@ of new models, tools, and communication patterns.
 
 ![Architecture Diagram](./docs/Multi-Agent-Architecture.drawio.svg)
 
-## Sequence diagrams
+## Sequence diagram
 
 To support a clearer understanding of the architecture, the following
-sequence diagrams illustrate key interactions:
+sequence diagram illustrate key interactions:
 
-* [Agent Registration Sequence Diagram](./docs/Multi-Agent-AgentRegistration-SequenceDiagram.md)
 * [Conversational Sequence Diagram](./docs/Multi-Agent-Conversational-SequenceDiagram.md)
-* [Agent to Agent Communication Patterns](./docs/Multi-Agent-Agent-to-Agent-Patterns-SequenceDiagram.md)
 
 ## Patterns
 
@@ -66,7 +64,7 @@ and data protection to policy-controlled agent execution. A detailed breakdown
 is provided in the [Security Architecture Guide](./docs/Multi-Agent-Security.md).
 
 Key considerations include:
-- Identity-bound orchestration and agent execution.
-- Registry authorization and capability scoping.
-- Data retention policies tied to storage layers.
-- Tool execution mediated through policy-controlled MCP integration.
+* Identity-bound orchestration and agent execution.
+* Registry authorization and capability scoping.
+* Data retention policies tied to storage layers.
+* Tool execution mediated through policy-controlled MCP integration.
