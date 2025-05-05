@@ -4,42 +4,41 @@ sequenceDiagram
     participant AdminApp as Admin Interface
     participant Orch as Orchestrator
     participant AgReg as Agent Registry
-    participant DiscM as Discovery Module (in Agent Registry)
-    participant ValM as Validation Module (in Agent Registry)
-    participant Agent3 as Agent 3 (Remote)
+    participant ValM as Evaluation
+    participant Agent3 as Agent
     participant StorL as Storage Layer
     
-    Admin->>AdminApp: 1. Request to register new agent
-    AdminApp->>Orch: 2. Send registration request
-    Orch->>AgReg: 3. Forward registration request
-    AgReg->>DiscM: 4. Initiate discovery process
-    
-    DiscM->>Agent3: 5. Probe agent endpoint
-    Agent3-->>DiscM: 6. Return capability manifest
-    
-    DiscM->>ValM: 7. Request manifest validation
-    ValM->>ValM: 8. Validate schema compliance
-    ValM->>ValM: 9. Check security requirements
-    ValM->>Agent3: 10. Perform test invocation
-    Agent3-->>ValM: 11. Return test response
-    ValM->>ValM: 12. Evaluate test response
-    ValM->>ValM: 13. Generate classification embeddings
-    
-    ValM-->>DiscM: 14. Return validation results
-    DiscM-->>AgReg: 15. Return discovery results
-    
-    AgReg->>AgReg: 16. Generate agent ID and credentials
-    AgReg->>StorL: 17. Store agent metadata
-    StorL-->>AgReg: 18. Confirm storage
-    
-    AgReg->>Agent3: 19. Send registration confirmation
-    Agent3-->>AgReg: 20. Acknowledge registration
-    
-    AgReg->>AgReg: 21. Update capability taxonomy
-    AgReg->>StorL: 22. Update registry storage
-    StorL-->>AgReg: 23. Confirm update
-    
-    AgReg-->>Orch: 24. Return registration status
-    Orch-->>AdminApp: 25. Report registration status
-    AdminApp-->>Admin: 26. Display confirmation and agent details
+    Admin->>AdminApp: Request to register new agent
+    AdminApp->>Orch: Send registration request
+    Orch->>+AgReg: Forward registration request
+    AgReg->>AgReg: Generate agent ID and credentials
+    AgReg->>Agent3: Probe agent endpoint
+    Agent3-->>AgReg: Return capability manifest
+    AgReg->>AgReg: Validate schema compliance
+    AgReg->>AgReg: Check security requirements
+    AgReg->>StorL: Store agent metadata
+    StorL-->>AgReg: Confirm storage
+    AgReg->>+ValM: Evaluate new configuration
+    ValM->>StorL: Request Evaluation Data Set
+    StorL-->>ValM: Evaluation Data Set
+    loop Orchestration Evaluation
+        ValM->>Agent3: Submit prompt
+        Agent3-->>ValM: Response
+    end
+    ValM-->>-AgReg: Evaluation response
+
+    alt Evaluation Passed
+        AgReg->>Agent3: Send registration confirmation
+        Agent3-->>AgReg: Acknowledge registration
+        AgReg->>StorL: Update registry storage
+        StorL-->>AgReg: Confirm update
+    else Evaluation Not Passed
+        AgReg->>Agent3: Send registration Denied
+        Agent3-->>AgReg: Acknowledge registration Denied
+        AgReg->>StorL: Update storage
+        StorL-->>AgReg: Confirm update
+    end
+    AgReg-->>-Orch: Return registration status
+    Orch-->>AdminApp: Report registration status
+    AdminApp-->>Admin: Display confirmation and agent details
 ```
