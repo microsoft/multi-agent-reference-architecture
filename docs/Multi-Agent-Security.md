@@ -69,6 +69,24 @@ AI usage, data protection, access control, and observability at every layer.
    * Automate runtime health checks and user experience monitoring tied to release gates.
    * Include manual override mechanisms (e.g., pause/disable an agent class) without affecting the overall system.
 
+## Enterprise Data Protection in RAG Scenario
+
+### Document Indexing Layer
+
+When indexing documents, ensure to include sensitivity and/or permissions (owner, edittable, etc) information in included as a retrivable field.
+
+### Retrival Layer
+
+When retriving/vector search for documents, filter on relevant sensitivity or permissions based on agent or user role or identity
+
+### Agent (using RAG) Layer
+
+Before generating response from the resulting document, ensure the retrieved documents are viewable by the user as another layer of protection
+
+### Indentity Layer
+
+Ensure that the user identity has roles or permissions associated and the identity is secured by following the "Identity Enforcement" section of this guide
+
 ## Compliance Considerations
 
 * Support for GDPR/CCPA consent flows.
