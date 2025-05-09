@@ -6,7 +6,7 @@ AI usage, data protection, access control, and observability at every layer.
 
 ## Core Security Principles
 
-## 1. Identity Enforcement
+### Identity Enforcement
 
    * Agents and orchestrators authenticate via Azure AD or equivalent identity providers.
    * Role-based access control (RBAC) governs agent execution and orchestration permissions.
@@ -14,55 +14,55 @@ AI usage, data protection, access control, and observability at every layer.
    * Use X.509 certificates or JWTs signed by an internal CA to verify agent provenance.
    * Support rotating credentials for long-lived agents.
 
-## 2. Scoped Agent Capabilities
+### Scoped Agent Capabilities
 
    * Agent registry enforces capability declarations and metadata tagging.
    * Only approved capabilities can be executed in runtime.
 
-## 3. Data Governance & Storage Policies
+### Data Governance & Storage Policies
 
    * All storage layers (state, conversation history, registry) support encryption-at-rest.
    * Retention policies are configurable per agent or orchestrator.
 
-## 4. Secure Communication
+### Secure Communication
 
    * All communication between agents, orchestrator, and external tools is encrypted via HTTPS or mutual TLS.
    * MCP protocol supports signed payloads and call tracing.
 
-## 5. Policy-Controlled Tool Invocation
+### Policy-Controlled Tool Invocation
 
    * MCP server validates tool access policies before invocation.
    * Integration layer enforces audit logging for all tool calls.
 
-## 6. Memory Management and Redaction
+### Memory Management and Redaction
 
    * Short-term memory is scoped to current conversation thread.
    * Long-term memory undergoes PII redaction and consent-based storage.
 
-## 7. LLM Usage & Guardrails
+### LLM Usage & Guardrails
 
    * Prompt templates include safety instructions.
    * Responses are filtered by safety classifiers and optionally passed through moderation APIs.
 
-## 8. Auditability and Observability
+### Auditability and Observability
 
    * Every orchestration and agent call is logged with metadata: timestamp, caller identity, input hash, output hash.
    * Logs are shipped to centralized observability platform (e.g., Azure Monitor or OpenTelemetry).
 
-## 9. Adversarial Testing & Red Teaming
+### Adversarial Testing & Red Teaming
 
    * Simulate attacks (prompt injection, message corruption, impersonation).
    * Use chaos security engineering to validate robustness of inter-agent communication.
    
 
-## 10. **Agent Versioning and Rollback Strategy**
+### Agent Versioning and Rollback Strategy
 
    * Version every agent’s logic, prompt configuration, and communication contract (e.g., using SemVer).
    * Support graceful coexistence of multiple versions (e.g., v1 agents in production, v2 agents in testing).
    * Use feature flags or routing rules to selectively enable agent versions per customer or region.
    * Always enable immediate rollback to a previous version if anomalies are detected (e.g., via GitOps or CI/CD workflows).
 
-## 11. **Business Continuity and User Safety**
+### Business Continuity and User Safety
 
    * Establish SLOs for agent performance (latency, availability, decision quality).
    * Define user impact metrics before deployment (e.g., error rate, abandonment rate, CSAT).
