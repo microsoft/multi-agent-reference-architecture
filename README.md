@@ -337,7 +337,7 @@ List of patterns that guided the proposed architecture.
 7. RAG (Retrieval-Augmented Generation) Pipeline
 8. Conversation-Aware Agent Orchestration (Contextual state + history memory)
 9. Agent to Agent communication
-    [Agent to Agent Communication Patterns](./docs/Multi-Agent-Agent-to-Agent-Patterns-SequenceDiagram.md)
+    [Agent to Agent Communication Patterns](./docs/Multi-Agent-Patterns.md#9-agent-to-agent-communication)
 
 ## Security Principles
 
