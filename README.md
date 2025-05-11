@@ -9,6 +9,8 @@ The content is grounded by learnings from real-world, production-scale implement
 
 The target audience are software architects and engineers with high level understanding of Generative AI and [agentic services](https://www.anthropic.com/engineering/building-effective-agents).
 
+This guide is intended for software architects and engineers familiar with agentic service development, whether they aim to extend existing systems to multi-agent architectures or to build them from the ground up.
+
 ## Table of Content
 
 - [Introduction](./docs/Introduction.md)
