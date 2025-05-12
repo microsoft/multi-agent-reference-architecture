@@ -4,16 +4,16 @@ This repository presents a conceptual guide, complemented by practical resources
 
 The recommendations are grounded in production-scale, real-world solutions built in collaboration with Microsoft customers. As such, the approaches offered in this reference are both opinionated (benefiting from field experience) and agnostic (applicable across enterprises, technology stacks, and frameworks).
 
-> [!NOTE]  
+> **Note:**  
 > Generative AI is advancing rapidly, with new models, patterns, protocols and paradigms constantly emerging. While the current design is intentionally agnostic and broad, we expect to refine and improve it as the ecosystem matures.
 
 This guide is intended for software architects and engineers familiar with [agentic services](https://www.anthropic.com/engineering/building-effective-agents) design and development, whether they aim to extend existing systems to multi-agent architectures or to build them from the ground up.
 
 ## Table of Content
 
-- [Introduction](./docs/Introduction.md)
-- [Building blocks](./docs/building-blocks/README.md)
-- [Agents communication](./docs/agents-communication/README.md)
-- [Traceability](./docs/traceability/README.md)
-- [Security](./docs/security/README.md)
-- [Governance](./docs/governance/README.md)
+* [Introduction](./docs/Introduction.md)
+* [Building blocks](./docs/building-blocks/README.md)
+* [Agents communication](./docs/agents-communication/README.md)
+* [Traceability](./docs/traceability/README.md)
+* [Security](./docs/security/README.md)
+* [Governance](./docs/governance/README.md)
