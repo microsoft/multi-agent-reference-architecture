@@ -1,6 +1,9 @@
 name: Deploy
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - feature/mdbook
 
 jobs:
   deploy:
