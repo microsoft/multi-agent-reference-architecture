@@ -11,7 +11,7 @@
         "editor.snippetSuggestions": "top",
         "editor.tabCompletion": "on",
         "editor.acceptSuggestionOnEnter": "on",
-        "editor.defaultFormatter": "mervin.markdown-formatter",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.rulers": [80],
         "editor.wordWrapColumn": 80,
     }
