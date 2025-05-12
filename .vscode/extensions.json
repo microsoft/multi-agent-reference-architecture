@@ -6,6 +6,7 @@
         "darkriszty.markdown-table-prettify",
         "vscode-icons-team.vscode-icons",
         "DavidAnson.vscode-markdownlint",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "darkriszty.markdown-table-prettify"
     ]
 }
