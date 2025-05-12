@@ -1,12 +1,25 @@
 # Introduction
 
-Generative AI is shifting rapidly from research to production, with enterprises seeking robust, maintainable and scalable solutions to solve complex problems. In this landscape, the design of multi-agent systems, where numerous specialized AI agents cooperate to solve problems, has become critically important: enables modularity, domain expertise, and agility, offering adaptability as business needs and AI capabilities evolve.
+Generative AI is shifting rapidly from research to production, with enterprises
+seeking robust, maintainable and scalable solutions to solve complex problems.
+In this landscape, the design of multi-agent systems, where numerous specialized
+AI agents cooperate to solve problems, has become critically important: enables
+modularity, domain expertise, and agility, offering adaptability as business
+needs and AI capabilities evolve.
 
-These systems reflect the natural structure of organizations: different roles, responsibilities, and domains mapped to individual or composite agents, each optimized for specific knowledge or workflows.
+These systems reflect the natural structure of organizations: different roles,
+responsibilities, and domains mapped to individual or composite agents, each
+optimized for specific knowledge or workflows.
 
 ## Design Principles
 
-The following design principles are especially crucial for multi-agent systems, as identified through real-world implementations in large enterprises. These principles address challenges unique to environments where multiple agents interact, collaborate, and exchange information. Treat them as guiding foundations rather than rigid requirements:
+The following design principles are especially crucial for multi-agent systems,
+as identified through real-world implementations in large enterprises. These
+principles address challenges unique to environments where multiple agents
+interact, collaborate, and exchange information. Treat them as guiding
+foundations rather than rigid requirements:
+
+<!-- markdownlint-disable MD013 -->
 
 | Name                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -16,3 +29,5 @@ The following design principles are especially crucial for multi-agent systems, 
 | Agent Registration & Lifecycle Governance | Agents should be explicitly registered, versioned, and validated before being included in production environment. Registration should capture agent capabilities, security posture, and lifecycle state to prevent duplication, control upgrades, and reduce risks from rogue or malfunctioning agents.                                                                                                                 |
 | Failure Isolation & Graceful Degradation  | Failures in one agent should not cascade to others. Consider fallback mechanisms, retries, or degraded modes of operation to ensure the workflow can continue, even in the presence of partial failures.                                                                                                                                                                                                                |
 | Context Management                        | Establish clear rules and policies regarding what context or conversational state is shared among agents and for how long. Carefully control context propagation to avoid privacy issues, data leakage, or logic confusion.                                                                                                                                                                                             |
+
+<!-- markdownlint-disable MD013 -->

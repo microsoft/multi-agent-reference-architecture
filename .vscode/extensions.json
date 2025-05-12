@@ -4,7 +4,9 @@
         "hediet.vscode-drawio",
         "eamodio.gitlens",
         "darkriszty.markdown-table-prettify",
-        "mervin.markdown-formatter",
-        "vscode-icons-team.vscode-icons"
+        "vscode-icons-team.vscode-icons",
+        "DavidAnson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "darkriszty.markdown-table-prettify"
     ]
 }
