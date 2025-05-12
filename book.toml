@@ -1,0 +1,5 @@
+[book]
+authors = ["Fernando de Oliveira"]
+language = "en"
+src = "src"
+title = "Multi-agent Reference Architecture"

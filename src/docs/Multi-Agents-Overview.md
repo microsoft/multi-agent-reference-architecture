@@ -1,8 +1,8 @@
 # Multi-Agent Reference Architecture
 
-This repository presents a conceptual guide, complemented by practical
-resources, for architecting robust multi-agent systems. The focus is not on
-building an individual agent, but on the unique challenges and effectiveness of
+This book presents a conceptual guide, complemented by practical resources, for
+architecting robust multi-agent systems. The focus is not on building an
+individual agent, but on the unique challenges and effectiveness of
 orchestrating, governing, and scaling systems where multiple specialized agents
 interact to solve complex problems. You will find actionable guidance for
 _designing for change_, balancing long-term extensibility with pragmatic,
@@ -25,12 +25,3 @@ architectures or build them from the ground up.
 > paradigms constantly emerging. While the current design is intentionally
 > agnostic and broad, we expect to refine and improve it as the ecosystem
 > matures.
-
-## Table of Content
-
-- [Introduction](./src/docs/Introduction.md)
-- [Building blocks](./src/docs/building-blocks/README.md)
-- [Agents communication](./src/docs/agents-communication/README.md)
-- [Observability](./docs/observability/README.md)
-- [Security](./docs/security/README.md)
-- [Governance](./docs/governance/README.md)
