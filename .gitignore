@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+book
+mermaid-init.js
+mermaid.min.js
+index.html

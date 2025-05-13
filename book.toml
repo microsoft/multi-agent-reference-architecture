@@ -1,0 +1,16 @@
+[book]
+authors = ["Fernando de Oliveira", "Hao Luo", "Thiago Rotta", "Vinicius Souza"]
+language = "en"
+src = "."
+title = "Multi-agent Reference Architecture"
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output]
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+git-repository-url = "https://github.com/msft-latam-devsquad/multi-agent-reference-architecture"

@@ -28,9 +28,9 @@ architectures or build them from the ground up.
 
 ## Table of Content
 
-- [Introduction](./docs/Introduction.md)
-- [Building blocks](./docs/building-blocks/README.md)
-- [Agents communication](./docs/agents-communication/README.md)
-- [Traceability](./docs/traceability/README.md)
-- [Security](./docs/security/README.md)
-- [Governance](./docs/governance/README.md)
+- [Introduction](docs/Introduction.md)
+- [Building blocks](docs/building-blocks/Building-Blocks.md)
+- [Agents communication](docs/agents-communication/Agents-Communication.md)
+- [Observability](docs/observability/Observability.md)
+- [Security](docs/security/Security.md)
+- [Governance](docs/governance/Governance.md)
