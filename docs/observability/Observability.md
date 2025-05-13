@@ -21,6 +21,7 @@ and faster incident response, which is critical for enterprise-grade AI systems.
 
 For reference:
 
+- [Monitoring Generative AI applications](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/monitoring/monitoring)
 - [Observability in Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/concepts/enterprise-readiness/observability/)
 - [Observability defined by CNCF](https://www.cncf.io/blog/2024/06/25/your-guide-to-observability-engineering-in-2024/)
 - [Open Telemetry Signals Concepts](https://opentelemetry.io/docs/concepts/signals/)
