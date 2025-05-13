@@ -1,7 +1,7 @@
 [book]
 authors = ["Fernando de Oliveira", "Hao Luo", "Thiago Rotta", "Vinicius Souza"]
 language = "en"
-src = "src"
+src = "."
 title = "Multi-agent Reference Architecture"
 
 [preprocessor]
