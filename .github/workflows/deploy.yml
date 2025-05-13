@@ -1,5 +1,6 @@
 name: Deploy
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -22,10 +23,18 @@ jobs:
           mkdir mdbook
           curl -sSL $url | tar -xz --directory=./mdbook
           echo `pwd`/mdbook >> $GITHUB_PATH
+      - name: Install latest mdbook-mermaid
+        run: |
+          tag=$(curl 'https://api.github.com/repos/badboy/mdbook-mermaid/releases/latest' | jq -r '.tag_name')
+          url="https://github.com/badboy/mdbook-mermaid/releases/download/${tag}/mdbook-mermaid-${tag}-x86_64-unknown-linux-gnu.tar.gz"
+          mkdir mdbook-mermaid
+          curl -sSL $url | tar -xz --directory=./mdbook-mermaid
+          echo `pwd`/mdbook-mermaid >> $GITHUB_PATH
       - name: Build Book
         run: |
           # This assumes your book is in the root of your repository.
           # Just add a `cd` here if you need to change to another directory.
+          mdbook-mermaid install
           mdbook build
       - name: Setup Pages
         uses: actions/configure-pages@v4

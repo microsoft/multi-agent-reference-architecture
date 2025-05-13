@@ -174,3 +174,5 @@ cython_debug/
 .pypirc
 
 book
+mermaid-init.js
+mermaid.min.js
