@@ -5,29 +5,21 @@
 ```mermaid
 
 stateDiagram
-    Workflow: Multi-agents
     Agents: Agents pool
     Orchestrator: Orchestrator Agent
+    Registry: Agents Registry
     Agent1: Specialized agent 1
-    Agent2: Specialized agent 2
     AgentN: Specialized agent N
-    Models: AI models
-    Data: External data sources
 
     direction LR
-    state Workflow {
-      direction LR
-      Orchestrator --> Agents
-    }
+    Orchestrator --> Agents
+    Orchestrator --> Registry
+    Orchestrator --> Memory
     state Agents {
-      direction LR
       Agent1
-      Agent2
       AgentN
     }
-    Workflow --> Models
-    Agents --> Data
-    Workflow --> Memory
+    Agents --> Memory
 ```
 
 - `Orchestrator agent` acts as the central coordinator within the multi-agent
@@ -37,6 +29,13 @@ stateDiagram
   for a specific function. Once the specialized agents complete their tasks and
   return their results, the orchestrator aggregates and synthesizes their
   outputs into a coherent final response.
+
+  > Although direct communication between specialized agents might seem
+  > convenient at first, it's recommended to route all communication through the
+  > orchestrator to maintain clarity and control. Avoid direct agent-to-agent
+  > messaging unless necessary; if agents are tightly coupled, group them into a
+  > single composite agent exposed to the orchestrator as one unit.
+
 - `Specialized agents` are domain-focused experts within the multi-agent system.
   Each one is responsible for a distinct area of expertise—for example, one
   agent might be responsible for finding flights, another for booking hotels,
@@ -54,8 +53,8 @@ stateDiagram
   > complexity. Instead, agents should be structured around meaningful, cohesive
   > capabilities—not isolated tool calls.
 
-> Although direct communication between specialized agents might seem convenient
-> at first, it's recommended to route all communication through the orchestrator
-> to maintain clarity and control. Avoid direct agent-to-agent messaging unless
-> necessary; if agents are tightly coupled, group them into a single composite
-> agent exposed to the orchestrator as one unit.
+- `Agents registry` serves as a centralized data service and source of truth for
+  managing all specialized agents available in the system for the orchestrator.
+  It functions like a dynamic directory—cataloging each agent's identity,
+  capabilities, operational status, version, and metadata tags. This registry
+  enables efficient discovery and auditability.
