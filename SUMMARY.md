@@ -6,6 +6,7 @@
 - [Multi-agents design]()
   - [Agents as a modular monolith]()
   - [Agents as microservices]()
+- [Agents registry]()
 - [Memory]()
   - [Short-term memory]()
   - [Long-term memory]()
