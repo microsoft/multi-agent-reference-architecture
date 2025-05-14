@@ -1,5 +1,4 @@
 {
-    "markdownFormatter.enable": true,
     "[markdown]": {
         "editor.formatOnSave": true,
         "editor.renderWhitespace": "all",
