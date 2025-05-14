@@ -26,6 +26,11 @@ architectures or build them from the ground up.
 > agnostic and broad, we expect to refine and improve it as the ecosystem
 > matures.
 
+If you want to jump straight to the architecture reference, check out the
+[Reference Architecture](/docs/reference-architecture/Reference-Architecture.md)
+chapter. Otherwise, if you'd like to explore the concepts and recommendations in
+more detail, just keep reading the next chapters.
+
 ## Table of Content
 
 - [Introduction](docs/Introduction.md)
