@@ -11,6 +11,7 @@ stateDiagram
     Agent1: Specialized <br/>Agent 1
     AgentN: Specialized <br/>Agent N
 
+    [*] --> Orchestrator
     direction LR
     Orchestrator --> Agents
     Orchestrator --> Registry
