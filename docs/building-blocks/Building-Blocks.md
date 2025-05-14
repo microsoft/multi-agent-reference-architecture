@@ -6,10 +6,10 @@
 
 stateDiagram
     Agents: Agents pool
-    Orchestrator: Orchestrator Agent
-    Registry: Agents Registry
-    Agent1: Specialized agent 1
-    AgentN: Specialized agent N
+    Orchestrator: Orchestrator <br/>Agent
+    Registry: Specialized Agents<br> Registry
+    Agent1: Specialized <br/>Agent 1
+    AgentN: Specialized <br/>Agent N
 
     direction LR
     Orchestrator --> Agents
