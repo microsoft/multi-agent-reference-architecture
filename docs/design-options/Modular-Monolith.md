@@ -68,6 +68,29 @@ stateDiagram-v2
   discipline, teams may inadvertently introduce dependencies between modules,
   increasing coupling and reducing long-term maintainability.
 
+## Onion (Layered) Architecture Within a Modular Monolith
+
+The **Onion Architecture** (also known as Layered Architecture) is a powerful
+structural pattern that can be applied _within the modular monolith_. While the
+monolith organizes code into independent business or domain modules (such as
+specialized agents or orchestrators), onion architecture further enforces
+**separation of technical concerns within each module** by defining clear,
+nested layers:
+
+- **Orchestration Layer** – Handles workflow and high-level coordination.
+- **Specialized Agent Layer** – Implements the core agent-specific business
+  logic.
+- **AI Layer** – Interfaces with language models and related AI components,
+  providing a unified API for all AI tasks.
+- **Knowledge Layer** – Interfaces with AI models, vector stores, files, web
+  data, data analytics platforms, and more.
+- **Storage Layer** – Manages persistence, data retrieval, and caching.
+- **Integration Layer** – Connects the system to external APIs and services.
+
+Each layer has **bounded responsibilities** and interacts through well-defined
+APIs, with strict rules: outer layers depend only on the inner ones, never the
+other way around.
+
 ## Modular Monolith as a Migration Path
 
 One of the strongest arguments for starting with a modular monolith is its role
@@ -112,3 +135,4 @@ it.
 
 - [Monolith First by Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html)
 - [Microservices for Greenfield?](https://samnewman.io/blog/2015/04/07/microservices-for-greenfield/)
+- [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
