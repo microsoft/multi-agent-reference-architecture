@@ -25,7 +25,7 @@
 
 ## Others
 
-- [Agentic services](https://www.anthropic.com/engineering/building-effective-agents)
+- [Agentic Services](https://www.anthropic.com/engineering/building-effective-agents)
 - [Observability defined by CNCF](https://www.cncf.io/blog/2024/06/25/your-guide-to-observability-engineering-in-2024/)
 
 ## Architecture design
@@ -38,4 +38,4 @@
 - [Agent Communication Protocol (ACP)](https://agentcommunicationprotocol.dev/introduction/welcome)
 - [Semantic kernel A2A integration](https://devblogs.microsoft.com/foundry/semantic-kernel-a2a-integration/)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
-- [unleash the power of model context protocol](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564)
+- [Unleash the Power of Model Context Protocol](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564)

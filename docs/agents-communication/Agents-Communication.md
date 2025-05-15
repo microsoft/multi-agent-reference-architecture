@@ -10,10 +10,9 @@ Rather than prescribing a single standard, we recommend adopting the protocol
 that best aligns with your intended usage scenario. Whether you're building
 tool-augmented agents, enabling peer-to-peer collaboration, or orchestrating
 enterprise workflows, choosing the right protocol ensures both scalability and
-operational efficiency. At
-[Patterns](../reference-architecture/Patterns.md#9-agent-to-agent-communication)
-on [reference architecture](../reference-architecture/Reference-Architecture.md)
-there is a reference for Agents communication
+operational efficiency. See the
+[Agent-to-Agent Communication pattern](../reference-architecture/Patterns.md#9-agent-to-agent-communication)
+for more details on agent communication.
 
 ## Model Context Protocol (MCP)
 
@@ -57,9 +56,9 @@ _Use Case_: Dynamically delegate tasks across specialized agents to build
 expert-driven, distributed workflows.
 
 Usage example with Semantic Kernel -
-[Semantic kernel A2A integration](https://devblogs.microsoft.com/foundry/semantic-kernel-a2a-integration/)
+[Semantic Kernel A2A integration](https://devblogs.microsoft.com/foundry/semantic-kernel-a2a-integration/)
 
-## Others emerging protocols
+## Other emerging protocols
 
 - [Agent Network Protocol (ANP)](https://agent-network-protocol.com/)
 
