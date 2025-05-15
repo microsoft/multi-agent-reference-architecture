@@ -5,7 +5,7 @@
 - [Building blocks](./docs/building-blocks/Building-Blocks.md)
 - [Multi-agents design options]()
   - [Agents as a modular monolith]()
-  - [Agents as microservices]()
+  - [Agents as microservices](./docs/design-options/Microservices.md)
 - [Agents registry]()
 - [Memory]()
   - [Short-term memory]()
