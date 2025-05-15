@@ -25,7 +25,7 @@
 
 ## Others
 
-- [agentic services](https://www.anthropic.com/engineering/building-effective-agents)
+- [Agentic services](https://www.anthropic.com/engineering/building-effective-agents)
 - [Observability defined by CNCF](https://www.cncf.io/blog/2024/06/25/your-guide-to-observability-engineering-in-2024/)
 
 ## Architecture design
@@ -33,3 +33,9 @@
 - [Monolith First by Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html)
 - [Microservices for Greenfield?](https://samnewman.io/blog/2015/04/07/microservices-for-greenfield/)
 - [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
+- [Agent-to-Agent Protocol (A2A)](https://a2aprotocol.ai/)
+- [Agent Network Protocol (ANP)](https://agent-network-protocol.com/)
+- [Agent Communication Protocol (ACP)](https://agentcommunicationprotocol.dev/introduction/welcome)
+- [Semantic kernel A2A integration](https://devblogs.microsoft.com/foundry/semantic-kernel-a2a-integration/)
+- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
+- [unleash the power of model context protocol](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564)
