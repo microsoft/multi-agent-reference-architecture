@@ -27,3 +27,9 @@
 
 - [agentic services](https://www.anthropic.com/engineering/building-effective-agents)
 - [Observability defined by CNCF](https://www.cncf.io/blog/2024/06/25/your-guide-to-observability-engineering-in-2024/)
+
+## Architecture design
+
+- [Monolith First by Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html)
+- [Microservices for Greenfield?](https://samnewman.io/blog/2015/04/07/microservices-for-greenfield/)
+- [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
