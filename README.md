@@ -35,6 +35,7 @@ more detail, just keep reading the next chapters.
 
 - [Introduction](docs/Introduction.md)
 - [Building blocks](docs/building-blocks/Building-Blocks.md)
+- [Design options](./docs/design-options/Design-Options.md)
 - [Agents communication](docs/agents-communication/Agents-Communication.md)
 - [Observability](docs/observability/Observability.md)
 - [Security](docs/security/Security.md)
