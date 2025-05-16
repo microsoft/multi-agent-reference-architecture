@@ -19,6 +19,14 @@ principles address challenges unique to environments where multiple agents
 interact, collaborate, and exchange information. Treat them as guiding
 foundations rather than rigid requirements:
 
+> This repository is continuously maintained by contributors to provide the
+> community with the most up-to-date guidance, grounded in real-world enterprise
+> experience and aligned with the latest developments in multi-agent systems. We
+> welcome your feedback, suggestions, and references to additional resources
+> that could enrich this documentation. As we evolve this reference
+> architecture, community input plays a vital role in shaping its relevance and
+> impact.
+
 <!-- markdownlint-disable MD013 -->
 
 | Name                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
