@@ -29,6 +29,8 @@
 - [Monolith First by Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html)
 - [Microservices for Greenfield?](https://samnewman.io/blog/2015/04/07/microservices-for-greenfield/)
 - [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
+- [Microservices Guide](https://martinfowler.com/microservices/)
+- [Microservices Patterns](https://microservices.io/patterns/index.html)
 - [Agentic Services](https://www.anthropic.com/engineering/building-effective-agents)
 
 ## Communication Protocol
