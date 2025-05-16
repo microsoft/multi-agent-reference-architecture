@@ -134,5 +134,5 @@ it.
 ## References
 
 - [Monolith First by Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html)
-- [Microservices for Greenfield?](https://samnewman.io/blog/2015/04/07/microservices-for-greenfield/)  
+- [Microservices for Greenfield?](https://samnewman.io/blog/2015/04/07/microservices-for-greenfield/)
 - [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
