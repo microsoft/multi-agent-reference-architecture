@@ -50,6 +50,9 @@ flowchart LR
   b1@{ animate: true }
 ```
 
+For a detailed sequence diagram of this process, see
+[Dynamic Agent Registry (Service Mesh for Agents) Diagram](../reference-architecture/Patterns.md#2-dynamic-agent-registry-service-mesh-for-agents)
+
 #### Agent-Initiated Self Register
 
 Alternatively, the register mechanism can be an API endpoint, where the Agents
@@ -155,6 +158,19 @@ community:
 
 - [A2A Agent Card Specification](https://google.github.io/A2A/specification/#55-agentcard-object-structure)
 - [ACP Agent Detail Specification](https://agentcommunicationprotocol.dev/core-concepts/agent-detail)
+
+## Evaluation of Registering Agent
+
+In Enterprise Multi-Agent Scenarios, there needs to be processes and policies
+in-place to ensure that by adding agents to the registry will not degrade the
+system's behavior.
+
+During the registration process, it's recommended to contain a validation step
+to evaluate the validity of the agent being registered.
+
+See
+[the Dynamic Agent Registry (Service Mesh for Agents) Diagram](../reference-architecture/Patterns.md#2-dynamic-agent-registry-service-mesh-for-agents)
+for a detailed walkthrough.
 
 ## Additional Examples and Resources
 
