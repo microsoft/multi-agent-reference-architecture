@@ -70,7 +70,7 @@ appropriate routing within the system. It ensures that user requests are
 properly understood and directed to the most suitable agent, improving response
 quality and system efficiency.
 
-**How it work**s: Analyzes the content, context, and intent of user inputs to
+**How it works**: Analyzes the content, context, and intent of user inputs to
 categorize them and determine appropriate handling.
 
 > The approach involves using options ranging from less to more expensive ones,
@@ -78,7 +78,7 @@ categorize them and determine appropriate handling.
 > continuation. If no intent is detected by the end of the process, return "IDK"
 > (I Don’t Know).
 
-#### Implementation
+**Implementation:**
 
 It can be implemented using a variety of technologies, including but not limited
 to:
@@ -102,7 +102,7 @@ capabilities beyond what's possible with generic AI models alone.
 **How it works**: Organizes knowledge into accessible formats, often including
 taxonomies, ontologies, and semantic relationships.
 
-#### Implementation
+**Implementation:**
 
 - Document databases
 - Knowledge graphs
@@ -125,7 +125,7 @@ coherent responses.
 appropriate specialized agents, monitors progress, aggregates results, and
 ensures overall task completion.
 
-#### Implementation
+**Implementation:**
 
 - Task planning algorithms
 - Dependency tracking systems
@@ -159,7 +159,7 @@ healthcare, coding) or function (e.g., summarization, research, creative
 writing), applying specialized knowledge, models, or techniques to user
 requests.
 
-#### Implementation
+**Implementation:**
 
 - Domain-specific LLM fine-tuning
 - RAG (Retrieval-Augmented Generation) with domain knowledge
@@ -194,7 +194,7 @@ an audit trail of system behavior.
 **How it works**: Records each turn in a conversation, maintaining user inputs,
 agent responses, and associated metadata in a structured, queryable format.
 
-#### Implementation
+**Implementation:**
 
 - Specialized conversation stores or time-series databases
 - Hierarchical data models (user → session → conversation → turn)
@@ -213,7 +213,7 @@ adaptation based on past experiences.
 for each agent, allowing them to resume operations and maintain learned
 behaviors.
 
-#### Implementation
+**Implementation:**
 
 - Key-value stores for fast state access
 - State versioning for consistency
@@ -233,7 +233,7 @@ and updates.
 capabilities, endpoints, security credentials, performance metrics, and version
 history.
 
-#### Implementation
+**Implementation:**
 
 - Structured database (relational or document)
 - Query-optimized schema for capability lookups
@@ -254,7 +254,7 @@ capabilities without needing to implement custom integrations for each tool.
 **How it works**: Implements the Model Context Protocol (MCP) to expose tools as
 a standardized service that agents can discover and invoke.
 
-#### Implementation
+**Implementation:**
 
 - MCP server implementation exposing tool APIs
 - Authentication and authorization controls
