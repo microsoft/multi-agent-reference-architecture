@@ -31,13 +31,18 @@
 - [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
 - [Microservices Guide](https://martinfowler.com/microservices/)
 - [Microservices Patterns](https://microservices.io/patterns/index.html)
-
-## Others
-
 - [Agentic Services](https://www.anthropic.com/engineering/building-effective-agents)
-- [Agent-to-Agent Protocol (A2A)](https://a2aprotocol.ai/)
-- [Agent Network Protocol (ANP)](https://agent-network-protocol.com/)
-- [Agent Communication Protocol (ACP)](https://agentcommunicationprotocol.dev/introduction/welcome)
-- [Semantic kernel A2A integration](https://devblogs.microsoft.com/foundry/semantic-kernel-a2a-integration/)
+
+## Communication Protocol
+
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
 - [Unleash the Power of Model Context Protocol](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564)
+- [Agent-to-Agent Protocol (A2A)](https://a2aprotocol.ai/)
+- [Google's Public A2A Agent Registry](https://a2astore.co/)
+- [Semantic kernel A2A integration](https://devblogs.microsoft.com/foundry/semantic-kernel-a2a-integration/)
+- [A2A Agent Card Specification](https://google.github.io/A2A/specification/#55-agentcard-object-structure)
+- [Agent Network Protocol (ANP)](https://agent-network-protocol.com/)
+- [Agent Communication Protocol (ACP)](https://agentcommunicationprotocol.dev/introduction/welcome)
+- [ACP Agent Detail Specification](https://agentcommunicationprotocol.dev/core-concepts/agent-detail)
+- [ACP Agent Detail Spec](https://agentcommunicationprotocol.dev/core-concepts/agent-detail#schema-metadata)
+- [ACP Documentation on Agent Registry](https://agentcommunicationprotocol.dev/core-concepts/agent-discovery#registry-based-discovery)

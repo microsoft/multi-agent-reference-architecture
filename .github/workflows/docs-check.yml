@@ -1,0 +1,38 @@
+name: Docs Linter
+on: [pull_request]
+
+jobs:
+  docs-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Install Markdown Linter
+        run: npm install -g markdownlint-cli
+
+      - name: Lint Markdown files (excluding references.md)
+        run: markdownlint "**/*.md" --ignore SUMMARY.md --ignore SECURITY.md --ignore CONTRIBUTING.md
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13.3'
+
+      - name: Run reference generator script
+        run: python ./scripts/update_references.py
+
+      - name: Fail if docs/references.md is outdated
+        run: |
+          git diff --exit-code || (
+            echo "::error file=docs/references.md::docs/references.md is outdated. Please run the script scripts/update_references.py and commit the updated file."
+            exit 1
+          )
+
+      - name: Check for unresolved 'New links identified' section
+        run: |
+          if grep -q "## New Links identified" references.md; then
+            echo "::error file=references.md::Please resolve 'New links identified' section before merging."
+            exit 1
+          fi
