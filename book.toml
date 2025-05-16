@@ -13,4 +13,4 @@ command = "mdbook-mermaid"
 
 [output.html]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
-git-repository-url = "https://github.com/msft-latam-devsquad/multi-agent-reference-architecture"
+git-repository-url = "https://github.com/microsoft/multi-agent-reference-architecture"
