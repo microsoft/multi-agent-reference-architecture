@@ -91,47 +91,7 @@ to:
 
 ### Agent Registry
 
-A directory service that maintains information about all available agents, their
-capabilities, and operational status. It enables dynamic discovery and
-utilization of agents, supporting scalability and system evolution without
-hard-coded dependencies.
-
-**How it works**: Maintains a database of agent metadata, including
-capabilities, endpoints, and operational parameters. Provides lookup and
-selection functions to identify appropriate agents for specific tasks.
-
-#### Implementation
-
-- Registry Database: Stores agent information
-- Registry API: Provides CRUD operations for agent entries
-- Query Interface: Allows capability-based lookups
-- Health Monitoring: Tracks agent availability and performance
-
-#### Important Sub components
-
-1. Discovery Module
-
-- Actively identifies and registers new agents
-- Implements discovery protocols
-- Handles administrator-initiated agent registration
-- Performs network scanning to locate potential agents
-- Manages the agent onboarding workflow
-- Maintains discovery history and retry logic
-
-2. Validation Module
-
-- Verifies agent capabilities and interfaces
-- Performs security validation and authentication
-- Tests agent functionality through probe requests
-- Ensures compatibility with system requirements
-- Generates agent metadata for classification
-
-3. Registry Storage
-
-- Persistent storage for agent information
-- Maintains version history and capability evolution
-- Stores security credentials and access policies
-- Logs agent interaction metrics and performance data
+See [Agent Registry Page](../agent-registry/Agent-Registry.md) for more detail
 
 ### Knowledge Layer
 
