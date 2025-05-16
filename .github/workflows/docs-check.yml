@@ -1,5 +1,4 @@
-name: Docs Quality Check
-
+name: Docs Linter
 on: [pull_request]
 
 jobs:
