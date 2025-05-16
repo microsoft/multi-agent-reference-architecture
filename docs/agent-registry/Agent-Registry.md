@@ -1,12 +1,17 @@
 # Agent Registry
 
-Agent Registry is the component that contains the information regarding all the
+Agent Registry is the component that contains the information regarding
 available agents in the multi-agent system.
 
-The primary goal of this registry is to provide a single-source-of-truth for
-agents in the system to know how to communicate with one another. In most cases
-though, in an Orchestrator-based multi-agent architecture, the registry enables
-the Orchestrator Agent to query which agents are best to carry the tasks at hand.
+Depending on the architecture of the multi-agent system (monolithic or
+distributed), Agent Registries can be centralized, or distributed per agent or
+agent group.
+
+The primary goal of an agent registry is to provide an information repository
+for the agents in the system to know how to communicate with one another. In
+most cases though, in an Orchestrator-based multi-agent architecture, the
+registry enables the Orchestrator Agent to query which agents are best to carry
+the immediate tasks at hand.
 
 ## Core Components
 
