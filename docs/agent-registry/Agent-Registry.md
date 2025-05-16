@@ -6,7 +6,7 @@ available agents in the multi-agent system.
 The primary goal of this registry is to provide a single-source-of-truth for
 agents in the system to know how to communicate with one another. In most cases
 though, in an Orchestrator-based multi-agent architecture, the registry enables
-the Orchestrator Agent to query which agent is best to carry the tasks at hand.
+the Orchestrator Agent to query which agents are best to carry the tasks at hand.
 
 ## Core Components
 
