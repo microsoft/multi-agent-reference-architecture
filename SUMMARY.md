@@ -7,7 +7,7 @@
   - [Agents as a modular monolith](./docs/design-options/Modular-Monolith.md)
   - [Agents as microservices](./docs/design-options/Microservices.md)
 - [Agents registry](./docs/agent-registry/Agent-Registry.md)
-- [Memory]()
+- [Memory](./docs/memory/Memory.md)
   - [Short-term memory]()
   - [Long-term memory]()
 - [Agents communication](./docs/agents-communication/Agents-Communication.md)
