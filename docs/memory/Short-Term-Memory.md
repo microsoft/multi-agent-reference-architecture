@@ -5,6 +5,15 @@ storage engine choice is critical. STM typically serves to persist conversation
 history, contextual state, and intermediary data that agents use to manage
 context and continuity during workflows.
 
+This topic covers:
+
+- [Key requirements](#key-requirements)
+- [Design approaches](#design-approaches)
+  - [Shared memory](#1-shared-memory)
+- [Data retention](#data-archival)
+
+---
+
 ## Key Requirements
 
 - **Fast Read/Write Performance:** Conversations and agent states change
@@ -29,9 +38,11 @@ typically offer:
 - **Efficient Retrieval:** Optimized for access patterns (by keys, IDs,
   timestamps) common in chat and STM use cases.
 
-Below, we explore some design approaches for STM and their trade-offs.
+---
 
-## 1. Shared Memory
+## Design approaches
+
+### 1. Shared Memory
 
 All agents—including the orchestrator and specialized agents—read and write
 session context to a centralized documents collection, which acts as the single
@@ -39,7 +50,7 @@ source of truth.
 
 ```mermaid
 flowchart LR
-  Orchestrator[Orchestrator agent]
+    Orchestrator[Orchestrator agent]
     SpecializedAgent1(Specialized agent 1)
     SpecializedAgentN(Specialized agent N)
     OrchestratorStore[(Docs <br/>collection)]
@@ -54,7 +65,7 @@ flowchart LR
   a3@{ animate: true }
 ```
 
-### **Key Characteristics**
+#### Key Characteristics
 
 - **Simplicity**: Easy to implement and operate.
 - **Unified Traceability**: A complete interaction content in one place, ideal
@@ -62,7 +73,7 @@ flowchart LR
 - **Consistent Context**: All agents can access the latest, synchronized session
   data.
 
-### **Data Modeling**
+#### Data Modeling
 
 Consider designing the documents to capture:
 
@@ -79,7 +90,7 @@ Consider designing the documents to capture:
   communication channel, tags).
 - **Timestamp:** When the message was written.
 
-### **Trade-offs**
+#### Trade-offs
 
 - **Scale Limitations**: One store can become a bottleneck with high throughput.
 - **Security and Privacy limitations:** Harder to restrict message visibility
@@ -88,3 +99,25 @@ Consider designing the documents to capture:
   agents, lowering context quality.
 
 ---
+
+## Data Retention
+
+While STM is suitable for hot, fast-access storage, it is recommended to archive
+conversation data after a defined period—such as when a session expires or after
+a set number of days. This practice serves several key purposes:
+
+- **Cost Optimization:** Cold storage (e.g. blob storage or data lake) is
+  significantly cheaper than high-performance databases, reducing costs for
+  long-term historical data retention.
+- **Analytics & Insights:** Archived conversations can drive analytics,
+  back-office dashboards, and system improvement efforts. The archived data is a
+  rich resource for both business and technical analysis.
+
+### Recommendations
+
+1. **Retention Policy:** Define policies for how long data remains in hot
+   storage before being archived or deleted.
+2. **ETL/Archiving Job:** Design a job that periodically move expired session
+   documents from STM to a cold storage.
+3. **Indexing for Analytics:** Optionally, batch-load archived data into an
+   analytics warehouse for reporting and custom queries.
