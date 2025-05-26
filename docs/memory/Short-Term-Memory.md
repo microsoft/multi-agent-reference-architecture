@@ -139,7 +139,7 @@ flowchart LR
   a3@{ animate: true }
 ```
 
-### **Key Characteristics**
+### Key Characteristics
 
 - **Scalability**: Agents can scale storage independently.
 - **Isolation and Privacy:** Avoids cross-agent context leakage; enables
