@@ -40,6 +40,9 @@ typically offer:
 - **Efficient Retrieval:** Optimized for access patterns (by keys, IDs,
   timestamps) common in chat and STM use cases.
 
+> As a reference, see
+> [How Microsoft Copilot scales to millions of users with Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/how-microsoft-copilot-scales-to-millions-of-users-with-azure-cosmos-db/)
+
 ---
 
 ## Design approaches
@@ -92,11 +95,11 @@ Consider designing the documents to capture:
 - **Timestamp:** When the message was written.
 
 > **Leverage chat history message objects from agentic frameworks rather than
-> normalizing data**. Frameworks such as Semantic Kernel and LangChain already
-> provide rich, extensible and tested chat history objects. Storing the full
-> object as message helps on troubleshooting scenarios (e.g. more detailed
-> information available and the ability to reconstruct the exact conversation
-> history).
+> normalizing data when possible**. Frameworks such as Semantic Kernel and
+> LangChain already provide rich, extensible and tested chat history objects.
+> Storing the full object as message helps on troubleshooting scenarios (e.g.
+> more detailed information available and the ability to reconstruct the exact
+> conversation history).
 
 #### Trade-offs
 
@@ -106,10 +109,10 @@ Consider designing the documents to capture:
 - **Potential Data Pollution**: An agent may write irrelevant data for the other
   agents, lowering context quality.
 
-> One approach to avoid data pollution is isolating agents documents within the
-> same collection by aggregating data that is unique for each agent as part of
-> the message ID (e.g. `<session_id>-<agent_id>`), then using this pattern to
-> query agent memory information.
+> To prevent data pollution, one effective strategy is to isolate each agent's
+> documents within the same collection by incorporating agent-specific data into
+> the message ID (e.g., `<session_id>-<agent_id>`). This structure can then be
+> used to reliably query memory information for individual agents
 
 ---
 
