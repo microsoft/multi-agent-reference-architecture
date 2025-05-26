@@ -15,6 +15,10 @@
 - [Monitoring Generative AI applications](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/monitoring/monitoring)
 - [A practical guide to build agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)
 
+## Memory
+
+- [How Microsoft Copilot scales to millions of users with Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/how-microsoft-copilot-scales-to-millions-of-users-with-azure-cosmos-db/)
+
 ## Observability
 
 - [What is OpenTelemetry?](https://opentelemetry.io/docs/what-is-opentelemetry/)
