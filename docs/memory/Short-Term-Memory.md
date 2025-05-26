@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD024 -->
+
 # Short-term Memory
 
 When building the STM (Short-Term Memory) layer for a multi-agent system, the
