@@ -49,7 +49,7 @@ typically offer:
 
 ### 1. Shared Memory
 
-All participanting agents read and write session context to a centralized
+All participating agents read and write session context to a centralized
 documents collection, which acts as the single source of truth.
 
 ```mermaid
