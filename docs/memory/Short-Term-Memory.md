@@ -12,7 +12,7 @@ This topic covers:
   - [Shared memory](#1-shared-memory)
   - [Distributed memory](#2-distributed-memory)
   - [Hybrid memory](#3-hybrid-memory)
-- [Data retention](#data-archival)
+- [Data retention](#data-retention)
 
 ---
 
