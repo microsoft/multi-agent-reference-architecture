@@ -148,7 +148,7 @@ flowchart LR
   agent-specific retention policies.
 - **Flexibility:** Agents can optimize memory data modeling for their use case.
 
-### **Data Modeling**
+#### Data Modeling
 
 The same recommendations from [Shared memory data modeling](#data-modeling)
 design applies to distributed memory except the `source` data that is not
