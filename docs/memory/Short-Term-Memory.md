@@ -38,7 +38,7 @@ typically offer:
 - **Nested/Hierarchical Data:** Supports complex, nested data structures ideal
   for conversation history.
 - **Horizontal Scalability:** Designed for high throughput, automatically scales
-  as data and sessions increase. partitioning for session cleanup.
+  as data and sessions increase, and supports partitioning for session cleanup.
 - **Efficient Retrieval:** Optimized for access patterns (by keys, IDs,
   timestamps) common in chat and STM use cases.
 
