@@ -24,6 +24,23 @@ productize the agent using enterprise-level tools and patterns. This includes
 refactoring the agent if necessary, ensuring compatibility with frameworks, and
 aligning with organizational standards.
 
+## Flow Diagram
+
+```mermaid
+flowchart TD
+    A[Experimentation Phase] --> B[Agent Logic Design]
+    B --> C[Evaluation Dataset Creation]
+    C --> D[Prompt & Configuration Tuning]
+    D --> E[Performance & Behavior Validation]
+    E --> F{Satisfactory Results?}
+    F -- No --> B
+    F -- Yes --> G[Handoff to Engineering]
+    G --> H[Integration with Framework & Patterns]
+    H --> I[Production Testing & Optimization]
+    I --> J[Security & Observability Instrumentation]
+    J --> K[Deployment to Production]
+```
+
 ## Key Stages
 
 1. **Testing**
@@ -31,7 +48,7 @@ aligning with organizational standards.
    - Conduct unit, integration, and end-to-end tests.
    - Prioritize real-world scenarios through automated pipelines.
    - Leverage test suites created during experimentation.
-   - Ensure deterministic tests for routing and decision-making logic in
+   - **Ensure deterministic tests for routing and decision-making logic** in
      multi-agent systems, enabling predictable outcomes and traceability during
      orchestration.
 
@@ -63,30 +80,6 @@ aligning with organizational standards.
 
    Refer to the [Observability on Agents](../observability/Observability.md)
    guide for more details.
-
-## Flow Diagram
-
-```mermaid
-flowchart TD
-    A[Experimentation Phase] --> B[Agent Logic Design]
-    B --> C[Evaluation Dataset Creation]
-    C --> D[Prompt & Configuration Tuning]
-    D --> E[Performance & Behavior Validation]
-    E --> F{Satisfactory Results?}
-    F -- No --> B
-    F -- Yes --> G[Handoff to Engineering]
-    G --> H[Integration with Framework & Patterns]
-    H --> I[Production Testing & Optimization]
-    I --> J[Security & Observability Instrumentation]
-    J --> K[Deployment to Production]
-```
-
-## Integration with DevOps and DataOps
-
-As with any production-grade system, agents should be subject to continuous
-validation and improvement. See the [DevOps and DataOps on Agents Lifecycle]()
-guide for CI/CD integration strategies, data drift monitoring, and ongoing model
-evaluation pipelines.
 
 ## Deterministic Routing Validation Example
 
