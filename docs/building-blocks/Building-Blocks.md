@@ -59,3 +59,6 @@ stateDiagram
   It functions like a dynamic directory—cataloging each agent's identity,
   capabilities, operational status, version, and metadata tags. This registry
   enables efficient discovery and auditability.
+
+> Additional reference of orchestration patterns:
+> [Semantic Kernel: Multi-agent Orchestration](https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-multi-agent-orchestration/)

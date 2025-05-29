@@ -1,5 +1,9 @@
 # References
 
+## Orchestration
+
+- [Semantic Kernel: Multi-agent Orchestration](https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-multi-agent-orchestration/)
+
 ## Microsoft
 
 - [Microsoft Responsible AI Standard (v2)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Responsible-AI-Standard-General-Requirements.pdf?culture=en-us&country=us)
