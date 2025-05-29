@@ -9,6 +9,7 @@
 - [Prompt Shields](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection)
 - [Azure AI Content Safety](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview)
 - [Multi-Agent Solution Accelerator](https://github.com/microsoft/Multi-Agent-Custom-Automation-Engine-Solution-Accelerator)
+- [Azure AI Foundry Playground](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/concept-playgrounds)
 
 ## Open AI
 
