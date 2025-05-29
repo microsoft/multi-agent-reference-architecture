@@ -51,6 +51,8 @@ flowchart TD
    - **Ensure deterministic tests for routing and decision-making logic** in
      multi-agent systems, enabling predictable outcomes and traceability during
      orchestration.
+   - Use synthetic inputs and golden outputs to validate routing logic over
+     time.
 
 2. **Documentation**
 
