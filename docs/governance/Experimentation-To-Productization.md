@@ -37,7 +37,7 @@ flowchart TD
     F -- Yes --> G[Handoff to Engineering]
     G --> H[Integration with Framework & Patterns]
     H --> I[Production Testing & Optimization]
-    I --> J[Security & Observability Instrumentation]
+    I --> J[Hardening: Security & Observability]
     J --> K[Deployment to Production]
 ```
 
