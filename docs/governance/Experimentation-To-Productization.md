@@ -15,9 +15,9 @@ prompt strategies, and configuration parameters.
 Experimentation often begins with a Data Science team, using tools such as
 Jupyter Notebooks or SaaS platforms like
 [Azure AI Foundry Playground](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/concept-playgrounds).
-The goal is to identify the most promising model or configuration aligned with
-business objectives. Evaluation data and test suites are also created to assess
-performance.
+The goal is to identify the most effective orchestration or configuration
+strategy aligned with business objectives. Evaluation data and test suites are
+also created to assess performance.
 
 Once results are satisfactory, the Software Engineering team takes over to
 productize the agent using enterprise-level tools and patterns. This includes
