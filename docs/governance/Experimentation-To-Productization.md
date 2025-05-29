@@ -99,6 +99,28 @@ sequenceDiagram
     Note right of Router: Confirm fallback logic executed
 ```
 
+## Integration with DevOps and DataOps
+
+As with any production-grade system, agents should be subject to continuous
+validation and improvement. See the
+[DevOps and DataOps on Agents Lifecycle](./docs/governance/DevOps-and-DataOps-on-agents-lifecycle.md)
+guide for CI/CD integration strategies, data drift monitoring, and ongoing model
+evaluation pipelines.
+
+## Common Pitfalls to Avoid
+
+- Lack of reproducibility from experimentation to production.
+- Overfitting to sandbox or evaluation data.
+- Insufficient governance checkpoints (e.g., security assessments, RAI reviews).
+- Poor observability and incident response readiness.
+
+## Governance and Testing Recommendations
+
+- Define clear **gates**: including Responsible AI reviews, security audits, and
+  performance benchmarks.
+- Apply advanced testing strategies: chaos testing, synthetic queries, and eval
+  frameworks with regression baselines.
+
 ## Conclusion
 
 By following these structured steps, developers and teams can confidently
