@@ -27,12 +27,10 @@ This topic covers:
 sequenceDiagram
     participant Client
     participant Orchestrator Agent
-    participant Specialized Agent
 
-    Client->>Orchestrator Agent: User prompt
-    Orchestrator Agent->>Specialized Agent: Request
-    Specialized Agent-->>Orchestrator Agent: Response
-    Orchestrator Agent-->>Client: Final answer
+    Client->>Orchestrator Agent: Request
+    Note over Orchestrator Agent: Workflow processing
+    Orchestrator Agent-->>Client: Response
 ```
 
 ## Key characteristics
@@ -77,23 +75,29 @@ conversational channels or proxies) handle streaming reliably.
 sequenceDiagram
     participant Client
     participant Orchestrator Agent
-    participant Specialized Agent
 
-    Client->>Orchestrator Agent: Send request
-    Orchestrator Agent-->>Client: Immediate response (Task ID)
+    Client->>Orchestrator Agent: Submit Request
+    Orchestrator Agent-->>Client: Ack with Task ID
 
-    Note over Orchestrator Agent, Specialized Agent: Orchestrator delegates async task
+    Note over Orchestrator Agent: Workflow executes asynchronously
 
-    Orchestrator Agent->>Specialized Agent: Execute task (with Task ID)
-    Specialized Agent-->>Orchestrator Agent: Ack / Result (when done)
-
-    loop Client polling for status
+    alt Client polls for status
+        loop Polling loop
+            Client->>Orchestrator Agent: GET /status/{task_id}
+            Orchestrator Agent-->>Client: Task pending/in progress
+        end
         Client->>Orchestrator Agent: GET /status/{task_id}
-        Orchestrator Agent-->>Client: Task pending/in progress
+        Orchestrator Agent-->>Client: Task completed + Result
+    else Webhook callback
+        Orchestrator Agent-->>Client: POST /callback {task_id, result}
+        Note right of Client: Client listens for webhook callback
+    else Message queue
+        Orchestrator Agent-->>MessageQueue: Publish {task_id, result}
+        Client-->>MessageQueue: Subscribe & receive result
+    else Event stream
+        Orchestrator Agent-->>EventStream: Emit {task_id, result}
+        Client-->>EventStream: Consume event with result
     end
-
-    Client->>Orchestrator Agent: GET /status/{task_id}
-    Orchestrator Agent-->>Client: Task completed + result
 ```
 
 ### Key Characteristics
@@ -102,6 +106,10 @@ sequenceDiagram
   long-running process and receives an immediate acknowledgment, usually
   containing a reference ID. The actual result is delivered later, allowing the
   client to continue without waiting.
+
+  > While the overall pattern is asynchronous, the initial request often
+  > involves a brief synchronous exchange to initiate processing and retrieve a
+  > task reference.
 
 - **Loose Temporal Coupling**: The client and agent do not need to be available
   at the same time. Agents process requests as resources allow, promoting
@@ -143,24 +151,37 @@ sequenceDiagram
 
 ## Recommendations
 
-Begin with the simplest communication pattern that effectively serves your use
-case—typically either synchronous or asynchronous request-reply without
-streaming responses. These approaches are easier to implement, debug, and
-observe, making them ideal during early development or when validating your core
-business logic.
+- **Start Simple**: Begin with the simplest communication pattern that
+  effectively serves your use case—typically either synchronous or asynchronous
+  request-reply without streaming responses. These approaches are easier to
+  implement, debug, and observe, making them ideal during early development or
+  when validating your core business logic.
 
-Avoid starting with streaming unless there's a clear, validated need—such as
-delivering incremental results, real-time progress updates, or when a
-single-response model creates a noticeable bottleneck for users or agents.
+- **Streaming When Justified**: Avoid starting with streaming unless there's a
+  clear, validated need—such as delivering incremental results, real-time
+  progress updates, or when a single-response model creates a noticeable
+  bottleneck for users or agents.
 
-If and when you adopt streaming architectures, invest early in observability and
-robust error handling. Streaming systems tend to introduce added complexity as
-they scale, and without strong visibility, diagnosing issues becomes
-significantly harder.
+- **Use Standards-Based Protocols**: Consider adopting an open agent
+  communication protocol to future-proof your architecture, improve
+  interoperability, leveraging security and governance features out of the box.
 
-This incremental approach aligns with agile principles: build for current needs,
-collect feedback, and evolve your system only as new requirements emerge.
+  > There are some emerging agents communication protocols such as
+  > [Agent-to-Agent Protocol (A2A)](https://a2aprotocol.ai/),
+  > [Agent Network Protocol (ANP)](https://agent-network-protocol.com/) and
+  > [Agent Communication Protocol (ACP)](https://agentcommunicationprotocol.dev/introduction/welcome)
+  > designed for request-based scenarios.
+
+- **Invest in Observability for Streaming**: If and when you adopt streaming
+  architectures, invest early in observability and robust error handling.
+  Streaming systems tend to introduce added complexity as they scale, and
+  without strong visibility, diagnosing issues becomes significantly harder.
+
+- **Iterative Approach**: This approach aligns with agile principles: build for
+  current needs, collect feedback, and evolve your system only as new
+  requirements emerge.
 
 ## References
 
 - [Asynchronous Request-Reply pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply)
+- [A Survey of Agent Interoperability Protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)](https://arxiv.org/html/2505.02279v1)
