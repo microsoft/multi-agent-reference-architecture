@@ -141,13 +141,22 @@ sequenceDiagram
 
 ## Summary table
 
-| **Aspect**           | **Synchronous**         | **Asynchronous**            |
-| -------------------- | ----------------------- | --------------------------- |
-| **Responsiveness**   | Immediate, blocking     | Deferred, non-blocking      |
-| **Scalability**      | Limited by concurrency  | High (with good design)     |
-| **Complexity**       | Low to medium           | Medium to high              |
-| **Best Fit**         | Short-lived tasks, APIs | Long-running, batch, events |
-| **Failure Handling** | Simple                  | Requires robustness         |
+| **Aspect**           | **Synchronous**         | **Asynchronous**                             |
+| -------------------- | ----------------------- | -------------------------------------------- |
+| **Responsiveness**   | Immediate, blocking     | Deferred, non-blocking                       |
+| **Scalability**      | Limited by concurrency  | High (with good design) <sup>[1]</sup></sup> |
+| **Complexity**       | Low to medium           | Medium to high                               |
+| **Best Fit**         | Short-lived tasks, APIs | Long-running, batch, events                  |
+| **Failure Handling** | Simple                  | Requires robustness <sup>[2]</sup>           |
+
+> - [1]: "Good design" refers to practices such as using queues, retries,
+>   idempotency, and observability to ensure the system scales reliably under
+>   load.
+> - [2] Asynchronous systems require more robust failure handling because errors
+>   may occur after the initial request, often in downstream services or over
+>   time. Unlike synchronous interactions, you don’t get immediate feedback, so
+>   handling retries, idempotency, delayed error propagation, and observability
+>   (e.g., tracing and logs) becomes critical to system reliability.
 
 ## Recommendations
 
