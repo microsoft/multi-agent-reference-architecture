@@ -7,8 +7,7 @@ step in the workflow.
 
 This pattern is commonly used in multi-agent systems and is implemented through
 protocols such as HTTP REST for stateless interactions, gRPC for low-latecy
-communication, Server-Sent Events (SSE) for unidirectional server push
-mechanisms over HTTP, or other RPC mechanisms. While these protocols differ in
+communication, or other RPC mechanisms. While these protocols differ in
 capabilities and performance characteristics, they all share the fundamental
 trait of being initiated by the client agent and typically bound to a response
 lifecycle.
