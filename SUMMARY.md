@@ -8,7 +8,6 @@
   - [Agents as microservices](./docs/design-options/Microservices.md)
 - [Agents registry](./docs/agent-registry/Agent-Registry.md)
 - [Agents communication](./docs/agents-communication/Agents-Communication.md)
-  - [Agent2Agent - A2A]()
   - [Request-driven](./docs/agents-communication/Request-Driven.md)
   - [Event-driven]()
   - [Data exchange protocols]()
