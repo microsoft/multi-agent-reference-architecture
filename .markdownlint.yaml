@@ -1,3 +1,4 @@
 default: true
-MD013: false  # Disable line length limit
-MD033: false  # Allow inline HTML
+MD013: false # Disable line length limit
+MD033: false # Allow inline HTML
+MD024: false # Allow duplicated headings
