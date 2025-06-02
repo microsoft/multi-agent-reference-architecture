@@ -44,7 +44,7 @@ independently.
     - [Non-streaming](#non-streaming)
     - [Server-Streaming](#server-streaming)
   - [Asynchronous Request-Reply](#2-asynchronous-request-reply)
-    - [Non-streaming](non-streaming-1)
+    - [Non-streaming](#non-streaming-1)
     - [Server-Streaming](#server-streaming-1)
 - [Summary table](#summary-table)
 - [Recommendations](#recommendations)
@@ -191,7 +191,9 @@ Common streaming connection patterns:
 - **Client/Transport Support**: Not all clients (e.g., legacy proxies, web
   clients) handle open or long-lived connections or all protocols (gRPC, SSE,
   etc.).
-- **Error Handling Complexity**: Client must handle mid-stream errors, parti
+- **Error Handling Complexity**: Client must handle mid-stream errors, partial
+  or interrupted streams, and implement reconnection logic to continue receiving
+  updates without data loss or duplication.
 - **Potential Networking Restrictions**: Firewalls, proxies, or load balancers
   may block or prematurely terminate long-lived HTTP connections; mobile or
   low-bandwidth networks can disrupt streams; TLS termination proxies might
