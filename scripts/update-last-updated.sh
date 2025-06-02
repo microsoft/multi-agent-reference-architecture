@@ -26,7 +26,7 @@ while IFS= read -r -d '' FILE; do
   cp "$FILE" "$FILE.bak"
 
   # Check if it already has a "Last updated" line
-  if grep -q "^_Last updated:" "$FILE"; then
+  if grep -q "^[[:space:]]*_Last updated:" "$FILE"; then
     if echo "$CHANGED" | grep -q "^$FILE$"; then
       # It's changed → update the existing line
       awk -v date="$DATE" '
