@@ -57,7 +57,7 @@ independently.
 Most client-to-agent communication falls into two categories:
 
 - **Non-Streaming (Single-Response):** The client sends a request to the
-  orchestrator that initates the multi-agent workflow, and waits for a single,
+  orchestrator that initiates the multi-agent workflow, and waits for a single,
   complete response—well suited for short-lived or atomic tasks where only the
   final result matters.
   - Advantages: Simplicity, straightforward error handling and easier
