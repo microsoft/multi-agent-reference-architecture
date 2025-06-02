@@ -1,5 +1,7 @@
 # Memory
 
+_Last updated: 2025-05-18_
+
 Memory is a foundational aspect of multi-agent systems, shaping how agents
 understand context, make decisions, and collaborate effectively. This chapter
 introduces two core memory types in multi-agent systems:

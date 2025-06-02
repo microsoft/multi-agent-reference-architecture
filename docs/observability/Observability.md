@@ -1,5 +1,7 @@
 # Observability
 
+_Last updated: 2025-05-13_
+
 As AI solutions evolve into complex, distributed systems—especially when
 leveraging multi-agent architectures—observability becomes essential to ensure
 reliability, performance, and trust. Observability is the capability to
