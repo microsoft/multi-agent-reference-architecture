@@ -1,4 +1,5 @@
 # Agents Communication
+_Last updated: 2025-05-15_
 
 As the ecosystem of AI agents rapidly evolves, new protocols are emerging to
 support diverse communication needs, security models, and integration patterns.

@@ -1,4 +1,5 @@
 # Agents as a Modular Monolith
+_Last updated: 2025-05-15_
 
 In the modular monolith design, all components—the orchestrator and each
 specialized agent—reside within a single codebase and are deployed as one

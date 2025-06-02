@@ -1,4 +1,5 @@
 # Agent Registry
+_Last updated: 2025-05-15_
 
 Agent Registry is the component that contains the information regarding
 available agents in the multi-agent system.

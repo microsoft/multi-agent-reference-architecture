@@ -1,4 +1,5 @@
 # Security
+_Last updated: 2025-05-12_
 
 This document outlines the security considerations and best practices for
 implementing multi-agent systems in enterprise environments. The architecture

@@ -1,4 +1,5 @@
 # Multi-agent Design Options
+_Last updated: 2025-05-15_
 
 This chapter explores architectural strategies for building multi-agent systems.
 Here we break down two primary design approaches:

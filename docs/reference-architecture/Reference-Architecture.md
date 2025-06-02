@@ -1,4 +1,5 @@
 # Reference Architecture
+_Last updated: 2025-05-16_
 
 The architecture below illustrates a modular and governed multi-agent system,
 supporting both local and remote agents through a central orchestration layer.
