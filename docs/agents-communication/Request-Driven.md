@@ -1,23 +1,44 @@
-# Request-driven Agents Communication
+# Request-driven Communication
 
 <!-- markdownlint-disable MD013 -->
 
-In a request-driven architecture, a client triggers the multi-agent workflow by
-sending a request to a designated workflow initiator—most often an orchestrator
-agent. The orchestrator coordinates the processing, delegates tasks to
-specialized agents as needed, and ultimately compiles and returns a response to
-the client.
+In a request-driven communication pattern, all interactions—between the end
+client, the multi-agent workflow, and within the multi-agent system itself—are
+initiated and mediated by explicit requests.
 
-This interaction is commonly implemented using widely adopted protocols such as
-HTTP (the foundation for inter-agent communication), gRPC (offering efficient
-low-latency or streaming capabilities built on top of HTTP/2), or other remote
-procedure call (RPC) mechanisms. This foundational pattern enables modularity,
-clear control flow, and interoperability across a variety of systems and agent
-implementations.
+The process typically unfolds as follows: a client sends a request to a central
+entrypoint, usually an orchestrator agent, which is responsible for initiating
+the workflow. The orchestrator agent then manages the full sequence of
+operations, delegating tasks via individual requests to specialized (expert)
+agents according to its internal plan. Each expert agent processes its assigned
+task as a discrete request/response interaction and sends the result back to the
+orchestrator. Upon completion of all delegated tasks, the orchestrator compiles
+and returns the aggregated outcome to the client.
+
+This communication pattern is most often implemented using standardized
+protocols such as HTTP (providing a stateless, language-agnostic foundation for
+message exchange), gRPC (which offers more efficient binary transport and
+supports both unary and streaming interactions over HTTP/2), or Server-Sent
+Events (SSE), which allows servers to push near real-time, one-way event streams
+to clients over HTTP. These patterns can be chosen based on latency, payload
+size, and whether near real-time or streaming responses are required.
+
+The core advantage of this design is its emphasis on modularity, explicit
+control flow, and strong boundaries between agents—making it easier to reason
+about, scale, and interoperate across heterogeneous systems.
+
+By using request-based messaging at every interface—external clients,
+orchestrator, and specialized agents—the architecture achieves a clear
+separation of concerns, improves observability, and supports a wide range of
+deployment topologies (from monoliths to distributed microservices).
+Additionally, this approach simplifies traceability and debugging, as each
+request-response transaction can be logged, versioned, and instrumented
+independently.
 
 ## Table of Content
 
 - [Non-Streaming vs Streaming Interactions](#non-streaming-vs-streaming-interactions)
+  - [Streaming recommendation](#streaming-recommendation)
 - [Communication Patterns](#communication-patterns)
   - [Synchronous Request-Reply](#1-synchronous-request-reply)
     - [Non-streaming](#non-streaming)
@@ -33,28 +54,47 @@ implementations.
 
 ## Non-Streaming vs Streaming Interactions
 
-Most agent-to-agent communication falls into two categories:
+Most client-to-agent communication falls into two categories:
 
-- **Non-Streaming (Single-Response):** The client sends a request and waits for
-  a single, complete response. This is the traditional request-reply pattern,
-  well suited for short-lived or atomic tasks where only the final result is
-  relevant.
-  - Advantages: Simplicity, straightforward error handling and observability.
-  - Limitations: Not ideal for long-running or incremental workloads; client
+- **Non-Streaming (Single-Response):** The client sends a request to the
+  orchestrator that initates the multi-agent workflow, and waits for a single,
+  complete response—well suited for short-lived or atomic tasks where only the
+  final result matters.
+  - Advantages: Simplicity, straightforward error handling and easier
+    observability.
+  - Limitations: Not ideal for long-running or incremental workloads; client is
     blocked until task completes.
-- **Streaming (Incremental Response):** The agent returns results incrementally
-  as processing progresses—either in a single connection/session (e.g.,
-  gRPC/server-sent events) or via event-driven channels (e.g., message brokers).
-  Useful for large outputs (e.g., LLM token generation), real-time status
-  updates, or tasks where progress feedback matters.
-  - Advantages: Immediate visibility into progress, lower perceived latency,
-    scalable delivery to multiple consumers.
+- **Streaming (Incremental Response):** Results or updates are sent
+  incrementally during processing (e.g., via server-sent events, gRPC streaming,
+  or websockets). This enables real-time progress feedback or delivery of large
+  outputs as they are generated, common in LLM-driven use cases
+  - Advantages: Immediate progress visibility, lower perceived latency for
+    users, supports scalable delivery to multiple consumers.
   - Limitations: More complex protocol handling, error management, and
     observability; potential network compatibility issues.
 
-> Multi-agent systems often take advantage of both models, selecting the
-> appropriate pattern per agent interaction based on task characteristics,
-> performance requirements, and client needs.
+### Streaming recommendation
+
+In practice, for multi-agent architectures, it's most effective to only stream
+responses from the orchestrator agent to the end client—not between the
+orchestrator and internal expert agents sue the following reasons:
+
+- **Workflow Control**: The orchestrator is responsible for the workflow's
+  consistency and correctness. If expert agents stream content directly, the
+  orchestrator cannot guarantee ordering, error handling, or workflow structure.
+- **Error Handling**: Streaming across multiple hops makes error recovery more
+  complex—if an expert agent fails or returns incomplete data, the orchestrator
+  must reconcile fragmented streams, resulting in fragile and error-prone logic.
+- **Increased Complexity**: Maintaining streaming protocols, session state, and
+  message ordering across all agent-to-agent boundaries increases architectural
+  complexity and operational risk.
+- **Observability & Traceability**: Streaming across agents makes it harder to
+  correlate events, track versioning, and audit a workflow’s execution in a
+  deterministic order.
+- **Value vs. Effort**: Direct streaming between agents rarely delivers end-user
+  value that justifies the development and maintenance overhead. The
+  orchestrator is the only agent with enough context to assemble, filter, and
+  sequence partial results before presenting them to users.
 
 ## Communication Patterns
 
@@ -66,10 +106,17 @@ Most agent-to-agent communication falls into two categories:
 sequenceDiagram
     participant Client
     participant Orchestrator Agent
+    participant Specialized Agent
 
     Client->>Orchestrator Agent: Request
-    Note over Orchestrator Agent: Workflow processing
+    activate Orchestrator Agent
+    Note over Orchestrator Agent: Planning
+    Orchestrator Agent->>Specialized Agent: Request
+    activate Specialized Agent
+    Specialized Agent-->>Orchestrator Agent: Response
+    deactivate Specialized Agent
     Orchestrator Agent-->>Client: Response
+    deactivate Orchestrator Agent
 ```
 
 ##### Key characteristics
@@ -99,20 +146,45 @@ sequenceDiagram
 sequenceDiagram
     participant Client
     participant Orchestrator Agent
+    participant Specialized Agent(s)
     Client->>Orchestrator Agent: Initiate streaming request
+    Note over Orchestrator Agent: Planning
+    Orchestrator Agent->>Specialized Agent(s): Request
+    activate Specialized Agent(s)
+    Specialized Agent(s)-->>Orchestrator Agent: Response
+    deactivate Specialized Agent(s)
     loop Stream
         Orchestrator Agent-->>Client: Partial response / update
     end
     Orchestrator Agent-->>Client: Completion signal
 ```
 
+Common streaming connection patterns:
+
+- **Server-Sent Events (SSE)**: The orchestrator agent streams incremental
+  updates to the client over a single HTTP connection using the
+  `text/event-stream` format—well-suited for browsers and lightweight consumers.
+
+- **HTTP Chunked Responses**: The server delivers result fragments as they
+  become available via HTTP chunked transfer encoding, keeping the connection
+  open for the duration of the task.
+
 ##### Key Characteristics
 
-- **Incremental Feedback**: Client receives results “as they arrive,” not just
-  after full completion.
-- **Reduced Time-to-First-Byte**: Users or downstream agents see progress early.
-- **Single Connection Lifecycle**: The client maintains one "open" connection
-  for the full exchange.
+- **Non-blocking workflow**: The client submits a request to initiate a
+  potentially long-running process and receives prompt acknowledgment
+  (containing a unique task ID). The workflow executes independently, freeing
+  the client from waiting for completion.
+
+  > While the overall pattern is asynchronous, the initial request is typically
+  > a synchronous HTTP exchange to obtain the reference/task ID.
+
+- **Deferred response via polling**: The client periodically polls a status
+  endpoint (using the task ID) to check for task progress or retrieval of the
+  final result.
+- **Temporal decoupling**: The client and orchestrator do not need to maintain a
+  persistent connection or block on each other—the client can reconnect and
+  resume polling as needed.
 
 ##### Tradeoffs
 
@@ -140,22 +212,14 @@ sequenceDiagram
     Client->>Orchestrator Agent: Submit Request
     Orchestrator Agent-->>Client: Ack with Task ID
 
-    Note over Orchestrator Agent: Workflow executes asynchronously
+    Note over Orchestrator Agent: Workflow executes long-running task(s)
 
-    alt Client polls for status
-        loop Polling loop
-            Client->>Orchestrator Agent: GET /status/{task_id}
-            Orchestrator Agent-->>Client: Task pending/in progress
-        end
+    loop Polling loop
         Client->>Orchestrator Agent: GET /status/{task_id}
-        Orchestrator Agent-->>Client: Task completed + Result
-    else Webhook callback
-        Orchestrator Agent-->>Client: POST /callback {task_id, result}
-        Note right of Client: Client listens for webhook callback
-    else Message queue
-        Orchestrator Agent-->>MessageQueue: Publish {task_id, result}
-        Client-->>MessageQueue: Subscribe & receive result
+        Orchestrator Agent-->>Client: Task pending/in progress
     end
+    Client->>Orchestrator Agent: GET /status/{task_id}
+    Orchestrator Agent-->>Client: Task completed + Result
 ```
 
 ##### Key Characteristics
@@ -169,55 +233,52 @@ sequenceDiagram
   > involves a brief synchronous exchange to initiate processing and retrieve a
   > task reference.
 
-- **Deferred or Event-Based Responses**: Results are delivered through
-  asynchronous channels such as message queues, polling endpoints, webhooks, or
-  event streams.
-
-- **Temporal Decoupling (Varying Degrees)**: The client and server (agent) do
-  not need to block while waiting for each other. The degree of temporal
-  decoupling depends on the transport mechanism:
-
-  - Message queues offer true loose temporal coupling, allowing agents to be
-    offline and process messages when ready.
-  - Webhooks provide partial decoupling — the receiver must be online but does
-    not need to poll.
-  - Event streams and polling require the client to remain available or
-    reconnect periodically.
-
-- **Well-Suited for Event-Driven Architectures**: This pattern aligns naturally
-  with event-driven systems, where message brokers and event buses help decouple
-  producers from consumers.
-
-- **Scalable and Resilient**: By introducing buffers (e.g., queues), the system
-  can absorb load spikes and recover from downstream slowdowns, enhancing
-  throughput and fault tolerance.
+- **Deferred Responses**: Results are delivered through asynchronous polling
+  endpoint channel.
+- **Temporal Decoupling**: The client and orchestrator do not need to block
+  while waiting for each other. However, polling requires the client to remain
+  available or reconnect periodically.
 
 ##### Tradeoffs
 
-- **Increased Complexity**: Requires message delivery management, idempotency,
-  retries, correlation IDs, and robust failure handling.
-- **Eventual Consistency**: State across agents may temporarily diverge.
-- **Observability Challenges**: Understanding workflow state requires
-  distributed tracing and correlation.
-- **Out-of-order/Duplicate Processing**: Logic required for reordering, retries,
-  and deduplication.
-- **Delayed Feedback**: Results not immediate; may require explicit progress or
-  completion notifications.
+- **Increased Complexity**: Requires mechanisms for reliable delivery,
+  idempotency, correlation IDs, and robust failure handling on both client and
+  coordinator sides.
+
+- **Management Overhead**: Polling introduces additional load on the
+  orchestrator and may result in inefficient resource usage if polling intervals
+  aren't well-tuned.
+
+- **Eventual Consistency**: State about long-running tasks may briefly diverge
+  between client expectations and orchestrator status, especially under failures
+  or network partitions.
+
+- **Observability Challenges**: To accurately view workflow progress,
+  distributed tracing and proper correlation of request/response cycles (e.g.,
+  using trace or context IDs) is essential.
+
+- **Duplicate/Out-of-Order Processing**: Clients may issue redundant requests or
+  receive delayed/out-of-order responses, requiring deduplication and
+  idempotency strategies.
+
+- **Delayed Feedback**: Clients must rely on repeated polling for updates rather
+  than receiving instantaneous notifications—potentially increasing perceived
+  latency.
+
+> Event-driven alternatives (such as webhooks or message queues) will be covered
+> in [Event-driven Communication](./Event-Driven-Communication.md).
 
 #### Server-Streaming
 
-Common patterns:
+Similar to non-streaming approach, the client sends a request to trigger a
+long-running process and receives an immediate acknowledgment, usually
+containing a reference ID. The client then opens a special streaming connection
+referencing the Task ID to receive updates as the task progresses.
 
-- **Chunked Notifications**: Each result chunk is published to a message broker
-  or event stream.
-- **Webhook Callbacks**: Each result or progress update triggers a webhook POST
-  to the client’s endpoint.
-- **Server-Sent Events (SSE)**: The server pushes updates to the client over an
-  HTTP connection using `text/event-stream`, suitable for browsers and
-  lightweight consumers.
-- **Multiplexed Task Updates**: Each stream message is tagged with a `TaskID` or
-  similar identifier to correlate updates across parallel or multi-step
-  processes.
+Streamed messages can include a TaskID or similar identifier to help the client
+associate updates with the correct ongoing request.
+
+Common streaming connection patterns:
 
 ```mermaid
 sequenceDiagram
@@ -238,14 +299,11 @@ sequenceDiagram
 ##### Key Characteristics
 
 - **Truly Decoupled Streaming**: Neither client nor agent is blocked; updates
-  are pushed as they become available, often over event-driven channels or
-  HTTP-based push (e.g., SSE).
-- **Multi-Client / Fanout Ready**: Multiple consumers or subscribers can
-  independently receive incremental outputs via publish-subscribe models or
-  stream replication.
+  are pushed as they become available using HTTP-based streaming mechanisms such
+  as Server-Sent Events (SSE) or chunked transfer encoding.
 - **High Scalability**: Well-suited for distributed, high-throughput
-  systems—whether using message brokers or lightweight server-push methods like
-  SSE.
+  systems—whether using lightweight server-push methods like SSE or message
+  brokers.
 
 ##### Tradeoffs
 
@@ -260,13 +318,13 @@ sequenceDiagram
 
 ## Summary Table
 
-| **Aspect**           | **Synchronous (Non-Streaming)** | **Synchronous Streaming**               | **Asynchronous (Non-Streaming)**          | **Asynchronous Streaming**                                 |
-| -------------------- | ------------------------------- | --------------------------------------- | ----------------------------------------- | ---------------------------------------------------------- |
-| **Responsiveness**   | Immediate, single response      | Immediate start, incremental results    | Deferred response                         | Deferred start, incremental/partial results                |
-| **Scalability**      | Low (client blocking)           | Low–Medium <sup>[1]</sup>               | High<sup>[2]</sup>                        | Very High<sup>[3]</sup>                                    |
-| **Complexity**       | Low                             | Medium (connection mgmt, reconnections) | High (queues, retries, correlation)       | Very High (ordering, replay, deduplication, idempotency)   |
-| **Best Fit**         | Short tasks, APIs, low latency  | Progress bars, live updates, partials   | Batch jobs, background tasks, events      | Long-running tasks with feedback, pub/sub, event workflows |
-| **Failure Handling** | Simple                          | Medium (stream errors, reconnects)      | Advanced (timeouts, retries, idempotency) | Complex (stream replay, correlation IDs, lost messages)    |
+| **Aspect**           | **Synchronous (Non-Streaming)** | **Synchronous Streaming**               | **Asynchronous (Non-Streaming)**          | **Asynchronous Streaming**                               |
+| -------------------- | ------------------------------- | --------------------------------------- | ----------------------------------------- | -------------------------------------------------------- |
+| **Responsiveness**   | Immediate, single response      | Immediate start, incremental results    | Deferred response                         | Deferred start, incremental/partial results              |
+| **Scalability**      | Low (client blocking)           | Low–Medium <sup>[1]</sup>               | High<sup>[2]</sup>                        | Very High                                                |
+| **Complexity**       | Low                             | Medium (connection mgmt, reconnections) | High (queues, retries, correlation)       | Very High (ordering, replay, deduplication, idempotency) |
+| **Best Fit**         | Short tasks, APIs, low latency  | Progress bars, live updates, partials   | Batch jobs, background tasks, events      | Long-running tasks with feedback, event workflows        |
+| **Failure Handling** | Simple                          | Medium (stream errors, reconnects)      | Advanced (timeouts, retries, idempotency) | Complex (stream replay, correlation IDs, lost messages)  |
 
 ---
 
@@ -274,13 +332,9 @@ sequenceDiagram
 This means the server can free memory sooner, and the client can process each
 chunk without needing to buffer everything until the end.
 
-<sup>[2]</sup> Enables time decoupling between producers and consumers.
-Leverages message queues or background jobs, improving scalability, fault
-tolerance, and supporting offline processing.
-
-<sup>[3]</sup> Enables real-time delivery and fan-out. With pub/sub or
-event-streaming infrastructure, supports high-throughput, loosely coupled
-systems with multiple concurrent consumers—ideal for event-driven architectures.
+<sup>[2]</sup> Enables time decoupling between the client and orchestrator.
+Leverages background jobs, improving scalability, fault tolerance, and
+supporting offline processing.
 
 ---
 
