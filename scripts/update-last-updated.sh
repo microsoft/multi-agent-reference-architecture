@@ -7,9 +7,9 @@ git fetch origin
 CHANGED=$(git diff --name-only origin/$BRANCH...HEAD)
 
 # Go through all .md files under docs/
-FILES=$(find docs/ -type f -name '*.md')
+while IFS= read -r -d '' FILE; do
 
-for FILE in $FILES; do
+  find docs/ -type f -name '*.md' -print0 |
   if [ ! -f "$FILE" ]; then
     echo "❌ File not found: $FILE"
     continue
