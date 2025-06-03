@@ -1,5 +1,9 @@
 # Multi-Agent Reference Architecture
 
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Give us a start on GitHub">Star</a>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
 This repository presents a conceptual guide, complemented by practical
 resources, for architecting robust multi-agent systems. The focus is not on
 building an individual agent, but on the unique challenges and effectiveness of
