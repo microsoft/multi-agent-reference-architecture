@@ -1,5 +1,7 @@
 # Multi-Agent Threat Model Worksheet
 
+_Last updated: 2025-05-12_
+
 This worksheet outlines potential threats and mitigation strategies for
 multi-agent systems in enterprise environments. It follows the STRIDE
 methodology (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of

@@ -1,5 +1,7 @@
 # Multi-Agent Patterns Reference
 
+_Last updated: 2025-05-14_
+
 This document catalogs key design patterns used in the Multi-Agent Reference
 Architecture. Each pattern contributes to the system's modularity, scalability,
 governance, or performance.

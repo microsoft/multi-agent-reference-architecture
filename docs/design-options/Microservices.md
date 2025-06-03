@@ -1,5 +1,7 @@
 # Agents as Microservices
 
+_Last updated: 2025-05-16_
+
 In the microservices design, each component—such as the orchestrator and every
 specialized agent—is encapsulated as an independent service running within its
 own process, potentially on separate machines or cloud services. These agents
