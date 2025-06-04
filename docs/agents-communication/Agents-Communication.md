@@ -1,5 +1,7 @@
 # Agents Communication
 
+_Last updated: 2025-05-31_
+
 This chapter introduces foundational communication paradigms central to
 designing robust multi-agent systems: **request-based** and **event-driven**
 architectures. The communication choices have significant implications for

@@ -1,5 +1,7 @@
 # Request-Driven Communication in Multi-Agent Systems
 
+_Last updated: 2025-06-04_
+
 In a request-driven model, all interactions—between clients, orchestrators, and
 expert agents—are initiated by explicit requests. A central orchestrator
 receives the client's request, plans the workflow, and delegates tasks to
