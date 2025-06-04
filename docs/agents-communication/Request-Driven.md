@@ -35,7 +35,7 @@ Additionally, this approach simplifies traceability and debugging, as each
 request-response transaction can be logged, versioned, and instrumented
 independently.
 
-## Table of Content
+## Table of Contents
 
 - [Non-Streaming vs Streaming Interactions](#non-streaming-vs-streaming-interactions)
   - [Streaming recommendation](#streaming-recommendation)
