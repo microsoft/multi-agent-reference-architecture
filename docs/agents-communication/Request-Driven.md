@@ -1,32 +1,10 @@
-# Request-Driven Communication in Multi-Agent Systems 
-
-<!-- markdownlint-disable MD013 -->
+# Request-Driven Communication in Multi-Agent Systems
 
 In a request-driven model, all interactions—between clients, orchestrators, and
 expert agents—are initiated by explicit requests. A central orchestrator
 receives the client's request, plans the workflow, and delegates tasks to
 specialized agents. Each agent processes its task independently and returns
 results to the orchestrator, which compiles and returns the final output.
-
-This model is most often implemented using standardized protocols such as HTTP
-(providing a stateless, language-agnostic foundation for message exchange), gRPC
-(which offers more efficient binary transport and supports both unary and
-streaming interactions over HTTP/2), or Server-Sent Events (SSE), which allows
-servers to push near real-time, one-way event streams to clients over HTTP.
-These patterns can be chosen based on latency, payload size, and whether near
-real-time or streaming responses are required.
-
-The core advantage of this design is its emphasis on modularity, explicit
-control flow, and strong boundaries between agents—making it easier to reason
-about, scale, and interoperate across heterogeneous systems.
-
-By using request-based messaging at every interface—external clients,
-orchestrator, and specialized agents—the architecture achieves a clear
-separation of concerns, improves observability, and supports a wide range of
-deployment topologies (from monoliths to distributed microservices).
-Additionally, this approach simplifies traceability and debugging, as each
-request-response transaction can be logged, versioned, and instrumented
-independently.
 
 ---
 
