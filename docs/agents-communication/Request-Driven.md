@@ -1,27 +1,20 @@
-# Request-driven Communication
+# Request-Driven Communication in Multi-Agent Systems 
 
 <!-- markdownlint-disable MD013 -->
 
-In a request-driven communication pattern, all interactions—between the end
-client, the multi-agent workflow, and within the multi-agent system itself—are
-initiated and mediated by explicit requests.
+In a request-driven model, all interactions—between clients, orchestrators, and
+expert agents—are initiated by explicit requests. A central orchestrator
+receives the client's request, plans the workflow, and delegates tasks to
+specialized agents. Each agent processes its task independently and returns
+results to the orchestrator, which compiles and returns the final output.
 
-The process typically unfolds as follows: a client sends a request to a central
-entrypoint, usually an orchestrator agent, which is responsible for initiating
-the workflow. The orchestrator agent then manages the full sequence of
-operations, delegating tasks via individual requests to specialized (expert)
-agents according to its internal plan. Each expert agent processes its assigned
-task as a discrete request/response interaction and sends the result back to the
-orchestrator. Upon completion of all delegated tasks, the orchestrator compiles
-and returns the aggregated outcome to the client.
-
-This communication pattern is most often implemented using standardized
-protocols such as HTTP (providing a stateless, language-agnostic foundation for
-message exchange), gRPC (which offers more efficient binary transport and
-supports both unary and streaming interactions over HTTP/2), or Server-Sent
-Events (SSE), which allows servers to push near real-time, one-way event streams
-to clients over HTTP. These patterns can be chosen based on latency, payload
-size, and whether near real-time or streaming responses are required.
+This model is most often implemented using standardized protocols such as HTTP
+(providing a stateless, language-agnostic foundation for message exchange), gRPC
+(which offers more efficient binary transport and supports both unary and
+streaming interactions over HTTP/2), or Server-Sent Events (SSE), which allows
+servers to push near real-time, one-way event streams to clients over HTTP.
+These patterns can be chosen based on latency, payload size, and whether near
+real-time or streaming responses are required.
 
 The core advantage of this design is its emphasis on modularity, explicit
 control flow, and strong boundaries between agents—making it easier to reason
@@ -34,21 +27,6 @@ deployment topologies (from monoliths to distributed microservices).
 Additionally, this approach simplifies traceability and debugging, as each
 request-response transaction can be logged, versioned, and instrumented
 independently.
-
-## Table of Contents
-
-- [Non-Streaming vs Streaming Interactions](#non-streaming-vs-streaming-interactions)
-  - [Streaming recommendation](#streaming-recommendation)
-- [Communication Patterns](#communication-patterns)
-  - [Synchronous Request-Reply](#1-synchronous-request-reply)
-    - [Non-streaming](#non-streaming)
-    - [Server-Streaming](#server-streaming)
-  - [Asynchronous Request-Reply](#2-asynchronous-request-reply)
-    - [Non-streaming](#non-streaming-1)
-    - [Server-Streaming](#server-streaming-1)
-- [Summary table](#summary-table)
-- [Recommendations](#recommendations)
-- [References](#references)
 
 ---
 
@@ -88,9 +66,9 @@ orchestrator and internal expert agents use the following reasons:
 - **Increased Complexity**: Maintaining streaming protocols, session state, and
   message ordering across all agent-to-agent boundaries increases architectural
   complexity and operational risk.
-- **Observability & Traceability**: Streaming across agents makes it harder to
-  correlate events, track versioning, and audit a workflow’s execution in a
-  deterministic order.
+- **Observability & Traceability**: When multiple agents stream data
+  independently, it becomes challenging to trace events, maintain version
+  control, and audit workflows in a predictable sequence.
 - **Value vs. Effort**: Direct streaming between agents rarely delivers end-user
   value that justifies the development and maintenance overhead. The
   orchestrator is the only agent with enough context to assemble, filter, and
@@ -244,7 +222,8 @@ sequenceDiagram
 ##### Tradeoffs
 
 - **Increased Complexity**: Requires mechanisms for reliable delivery,
-  idempotency, correlation IDs, and robust failure handling on both client and
+  idempotency (the ability of a given operation to always produce the same
+  result), correlation IDs, and robust failure handling on both client and
   coordinator sides.
 
 - **Management Overhead**: Polling introduces additional load on the
@@ -279,8 +258,6 @@ referencing the Task ID to receive updates as the task progresses.
 
 Streamed messages can include a TaskID or similar identifier to help the client
 associate updates with the correct ongoing request.
-
-Common streaming connection patterns:
 
 ```mermaid
 sequenceDiagram
@@ -378,3 +355,10 @@ supporting offline processing.
 
 - [Asynchronous Request-Reply pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply)
 - [A Survey of Agent Interoperability Protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)](https://arxiv.org/html/2505.02279v1)
+
+---
+
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Design Options](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/design-options/Design-Options.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss
+this page</a>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
