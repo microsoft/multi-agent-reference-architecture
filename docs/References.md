@@ -1,5 +1,11 @@
 # References
 
+_Last updated: 2025-05-29_
+
+## Orchestration
+
+- [Semantic Kernel: Multi-agent Orchestration](https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-multi-agent-orchestration/)
+
 ## Microsoft
 
 - [Microsoft Responsible AI Standard (v2)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Responsible-AI-Standard-General-Requirements.pdf?culture=en-us&country=us)
@@ -9,6 +15,7 @@
 - [Prompt Shields](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection)
 - [Azure AI Content Safety](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview)
 - [Multi-Agent Solution Accelerator](https://github.com/microsoft/Multi-Agent-Custom-Automation-Engine-Solution-Accelerator)
+- [Azure AI Foundry Playground](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/concept-playgrounds)
 
 ## Open AI
 

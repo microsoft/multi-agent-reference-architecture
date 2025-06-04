@@ -1,5 +1,7 @@
 # Contributors
 
+_Last updated: 2025-05-14_
+
 | Contributor                                         |
 | --------------------------------------------------- |
 | [Ana Franco](https://github.com/afrancoc2000)       |

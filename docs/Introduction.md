@@ -1,5 +1,7 @@
 # Introduction
 
+_Last updated: 2025-05-16_
+
 Generative AI is shifting rapidly from research to production, with enterprises
 seeking robust, maintainable and scalable solutions to solve complex problems.
 In this landscape, the design of multi-agent systems, where numerous specialized

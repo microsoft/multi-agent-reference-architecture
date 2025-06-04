@@ -2,6 +2,8 @@
 
 # Short-term Memory
 
+_Last updated: 2025-05-26_
+
 When building the STM (Short-Term Memory) layer for a multi-agent system, the
 storage engine choice is critical. STM typically serves to persist conversation
 history, contextual state, and intermediary data that agents use to manage
