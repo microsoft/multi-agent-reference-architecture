@@ -4,3 +4,4 @@ MD013: false # Disable line length limit
 MD033: false # Allow inline HTML
 MD036: false # Disable Emphasis used instead of a header
 MD047: false # Disable single trailing newline
+MD024: false # Disable no duplicated heading
