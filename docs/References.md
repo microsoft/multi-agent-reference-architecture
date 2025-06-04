@@ -44,12 +44,9 @@ _Last updated: 2025-05-29_
 - [Microservices Patterns](https://microservices.io/patterns/index.html)
 - [Agentic Services](https://www.anthropic.com/engineering/building-effective-agents)
 
-## Communication patterns
+## Communication Patterns & Protocols
 
 - [Asynchronous Request-Reply pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply)
-
-## Communication Protocols
-
 - [A Survey of Agent Interoperability Protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)](https://arxiv.org/html/2505.02279v1)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
 - [Unleash the Power of Model Context Protocol](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564)
