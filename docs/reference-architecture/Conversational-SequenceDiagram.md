@@ -50,3 +50,7 @@ sequenceDiagram
     Orch-->>UserApp: 28. Return response
     UserApp-->>User: 29. Display answer
 ```
+
+
+---
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Conversational Sequencediagram](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/reference-architecture/Conversational-SequenceDiagram.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>  <script async defer src="https://buttons.github.io/buttons.js"></script>

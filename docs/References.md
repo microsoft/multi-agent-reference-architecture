@@ -59,3 +59,7 @@ _Last updated: 2025-06-04_
 - [ACP Agent Detail Specification](https://agentcommunicationprotocol.dev/core-concepts/agent-detail)
 - [ACP Agent Detail Spec](https://agentcommunicationprotocol.dev/core-concepts/agent-detail#schema-metadata)
 - [ACP Documentation on Agent Registry](https://agentcommunicationprotocol.dev/core-concepts/agent-discovery#registry-based-discovery)
+
+
+---
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [References](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/References.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>  <script async defer src="https://buttons.github.io/buttons.js"></script>

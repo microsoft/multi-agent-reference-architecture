@@ -17,3 +17,7 @@ Designing STM and LTM in multi-agent systems brings unique challenges around
 synchronization, ownership, privacy, and data consistency. The following
 sections outline key patterns and trade-offs for integrating effective memory
 into your architecture.
+
+
+---
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Memory](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/memory/Memory.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>  <script async defer src="https://buttons.github.io/buttons.js"></script>
