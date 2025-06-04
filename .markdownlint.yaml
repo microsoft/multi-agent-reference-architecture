@@ -1,5 +1,6 @@
 default: true
+MD012: false # Disable multiple blank lines
 MD013: false # Disable line length limit
 MD033: false # Allow inline HTML
-MD024: false # Allow duplicated headings
 MD036: false # Disable Emphasis used instead of a header
+MD047: false # Disable single trailing newline
