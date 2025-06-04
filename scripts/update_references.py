@@ -22,6 +22,10 @@ ignored_files = ["references.md",
     "support.md"
 ]
 
+ignored_links = [
+    "https://buttons.github.io/buttons.js"
+]
+
 # File to store the updated reference list
 output_file = os.path.join(markdown_dir, "docs", "References.md")
 
@@ -35,6 +39,11 @@ def extract_links_from_file(file_path):
 
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
+
+        for ignored_link in ignored_links:
+            if ignored_link in content:
+                return {}
+
         matches = re.findall(link_regex, content)
         return {url: description for description, url in matches}
 
