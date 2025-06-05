@@ -35,7 +35,7 @@ Most client-to-agent communication falls into two categories:
 
 In practice, for multi-agent architectures, it's most effective to only stream
 responses from the orchestrator agent to the end client—not between the
-orchestrator and internal expert agents use the following reasons:
+orchestrator and internal expert agents due the following reasons:
 
 - **Workflow Control**: The orchestrator is responsible for the workflow's
   consistency and correctness. If expert agents stream content directly, the
