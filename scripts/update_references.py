@@ -25,7 +25,9 @@ ignored_files = [
     "support.md",
 ]
 
-ignored_links = ["https://buttons.github.io/buttons.js"]
+ignored_links = [
+    "https://buttons.github.io/buttons.js"
+]
 
 # File to store the updated reference list
 output_file = os.path.join(markdown_dir, "docs", "References.md")

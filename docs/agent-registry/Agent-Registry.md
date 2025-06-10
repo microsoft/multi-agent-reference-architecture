@@ -134,7 +134,7 @@ documentation as "Agent Information") is used for two purposes:
 ### For Human Consumption
 
 In order to form a more robust Agent Catalog more information might be needed
-for catagorization or classification (such as `tags` or `owners` in the metadata
+for categorization or classification (such as `tags` or `owners` in the metadata
 of the
 [ACP Agent Detail Spec](https://agentcommunicationprotocol.dev/core-concepts/agent-detail#schema-metadata)).
 
@@ -178,3 +178,9 @@ for a detailed walkthrough.
 
 - [Google's Public A2A Agent Registry](https://a2astore.co/)
 - [ACP Documentation on Agent Registry](https://agentcommunicationprotocol.dev/core-concepts/agent-discovery#registry-based-discovery)
+
+---
+
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Agent Registry](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/agent-registry/Agent-Registry.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
