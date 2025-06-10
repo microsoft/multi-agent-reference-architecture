@@ -33,6 +33,11 @@ def add_or_update_github_discussions_button(
 
     idx = content.rfind(github_button_header)
 
+    # Check if the file is empty (ignoring empty lines)
+    if not any(line.strip() for line in content.splitlines()):
+        logging.info(f"⚠️ Skipping update: {rel_file_path} is empty (ignoring empty lines)")
+        return
+
     if idx == -1:
         with open(abs_file_path, "a", encoding="utf-8") as f:
             _ = f.write("\n" + new_snippet + "\n")
@@ -48,7 +53,7 @@ def add_or_update_github_discussions_button(
         return
 
     new_content = content[:idx].rstrip() + "\n\n" + new_snippet
-
+    
     with open(abs_file_path, "w", encoding="utf-8") as f:
         _ = f.write(new_content)
 
