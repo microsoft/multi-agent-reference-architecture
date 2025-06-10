@@ -29,3 +29,9 @@ For reference:
 - [Open Telemetry Signals Concepts](https://opentelemetry.io/docs/concepts/signals/)
 - [What is OpenTelemetry?](https://opentelemetry.io/docs/what-is-opentelemetry/)
 - [OpenTelemetry – an open standard for collecting telemetry data.](https://opentelemetry.io/)
+
+---
+
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Observability](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/observability/Observability.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>

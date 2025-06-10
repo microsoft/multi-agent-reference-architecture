@@ -335,3 +335,9 @@ supporting offline processing.
 
 - [Asynchronous Request-Reply pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply)
 - [A Survey of Agent Interoperability Protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)](https://arxiv.org/html/2505.02279v1)
+
+---
+
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Request Driven](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/agents-communication/Request-Driven.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
