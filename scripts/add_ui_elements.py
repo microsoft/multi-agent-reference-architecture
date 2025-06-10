@@ -22,20 +22,20 @@ def add_or_update_github_discussions_button(
 
     title = format_title(file)
 
+    github_button_header = '\n\n---\n\n<a class="github-button"'
     new_snippet = (
-        f'---\n<a class="github-button" '
+        f'{github_button_header} '
         f'href="{REPO_URL}/discussions/new?category=q-a&body=Source: [{title}]({REPO_URL}/blob/main/{rel_file_path})" '
         f'data-icon="octicon-comment-discussion" target="_blank" data-size="large" '
-        f'aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>  '
-        f'<script async defer src="https://buttons.github.io/buttons.js"></script>'
+        f'aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>\n\n'
+        f'<script async defer src="https://buttons.github.io/buttons.js"></script>\n'
     ).strip()
 
-    github_button_header = '---\n<a class="github-button"'
     idx = content.rfind(github_button_header)
 
     if idx == -1:
         with open(abs_file_path, "a", encoding="utf-8") as f:
-            _ = f.write("\n" + new_snippet)
+            _ = f.write("\n" + new_snippet + "\n")
         logging.info(f"🆕 Discussions button added to {rel_file_path}")
         return
 
@@ -47,7 +47,7 @@ def add_or_update_github_discussions_button(
         )
         return
 
-    new_content = content[:idx].rstrip() + "\n" + new_snippet
+    new_content = content[:idx].rstrip() + "\n\n" + new_snippet
 
     with open(abs_file_path, "w", encoding="utf-8") as f:
         _ = f.write(new_content)
