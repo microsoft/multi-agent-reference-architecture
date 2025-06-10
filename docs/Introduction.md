@@ -41,6 +41,3 @@ foundations rather than rigid requirements:
 | Context Management                        | Establish clear rules and policies regarding what context or conversational state is shared among agents and for how long. Carefully control context propagation to avoid privacy issues, data leakage, or logic confusion.                                                                                                                                                                                             |
 
 <!-- markdownlint-disable MD013 -->
-
----
-<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Introduction](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/Introduction.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>  <script async defer src="https://buttons.github.io/buttons.js"></script>

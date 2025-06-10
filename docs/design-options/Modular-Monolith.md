@@ -138,6 +138,3 @@ it.
 - [Monolith First by Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html)
 - [Microservices for Greenfield?](https://samnewman.io/blog/2015/04/07/microservices-for-greenfield/)
 - [The Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/)
-
----
-<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Modular Monolith](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/design-options/Modular-Monolith.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>  <script async defer src="https://buttons.github.io/buttons.js"></script>
