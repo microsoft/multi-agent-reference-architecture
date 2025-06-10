@@ -29,3 +29,6 @@ scalability, and extensibility according to use case and maturity.
 This chapter will unpack the strengths, trade-offs, and practical considerations
 of each model, and help you select or combine approaches aligned with your
 agents’ roles, your SLA needs, and your team's operational capabilities.
+
+---
+<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Agents Communication](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/agents-communication/Agents-Communication.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>  <script async defer src="https://buttons.github.io/buttons.js"></script>

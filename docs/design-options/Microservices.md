@@ -130,6 +130,5 @@ Consider starting with microservices in the following situations:
 - [Microservices Guide](https://martinfowler.com/microservices/)
 - [Microservices Patterns](https://microservices.io/patterns/index.html)
 
-
 ---
 <a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Microservices](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/design-options/Microservices.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>  <script async defer src="https://buttons.github.io/buttons.js"></script>

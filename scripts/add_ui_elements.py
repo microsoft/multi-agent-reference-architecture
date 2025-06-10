@@ -35,7 +35,7 @@ def add_or_update_github_discussions_button(
 
     if idx == -1:
         with open(abs_file_path, "a", encoding="utf-8") as f:
-            _ = f.write("\n\n" + new_snippet)
+            _ = f.write("\n" + new_snippet)
         logging.info(f"🆕 Discussions button added to {rel_file_path}")
         return
 
@@ -47,7 +47,7 @@ def add_or_update_github_discussions_button(
         )
         return
 
-    new_content = content[:idx].rstrip() + "\n\n" + new_snippet
+    new_content = content[:idx].rstrip() + "\n" + new_snippet
 
     with open(abs_file_path, "w", encoding="utf-8") as f:
         _ = f.write(new_content)
