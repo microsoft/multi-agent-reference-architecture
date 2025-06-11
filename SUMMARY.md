@@ -10,7 +10,7 @@
 - [Agents communication](./docs/agents-communication/Agents-Communication.md)
   - [Agent2Agent - A2A]()
   - [Request-driven]()
-  - [Event-driven]()
+  - [Event-driven](./docs/agents-communication/Event-Driven.md)
   - [Data exchange protocols]()
 - [Memory](./docs/memory/Memory.md)
   - [Short-term memory](./docs/memory/Short-Term-Memory.md)
