@@ -29,6 +29,13 @@ jobs:
           mkdir mdbook-mermaid
           curl -sSL $url | tar -xz --directory=./mdbook-mermaid
           echo `pwd`/mdbook-mermaid >> $GITHUB_PATH
+      - name: Install latest mdbook-mermaid
+        run: |
+          tag=$(curl 'https://api.github.com/repos/howlowck/mdbook-selfpath/releases/latest' | jq -r '.tag_name')
+          url="https://github.com/howlowck/mdbook-selfpath/releases/download/${tag}/mdbook-selfpath-${tag}-x86_64-unknown-linux-gnu.tar.gz"
+          mkdir mdbook-selfpath
+          curl -sSL $url | tar -xz --directory=./mdbook-selfpath
+          echo `pwd`/mdbook-selfpath >> $GITHUB_PATH
       - name: Build Book
         run: |
           # This assumes your book is in the root of your repository.
