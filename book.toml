@@ -9,6 +9,8 @@ title = "Multi-agent Reference Architecture"
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
 
+[preprocessor.selfpath]
+
 [output]
 
 [output.html]
