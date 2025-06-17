@@ -1,11 +1,6 @@
 # Multi-Agent Reference Architecture
 
-<!--mdbook-begin-->
-
-<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Give us a start on GitHub">Star</a>
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!--mdbook-end-->
+{{ #include components/stars-badge.hbs }}
 
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/multi-agent-reference-architecture?style=social)](https://github.com/microsoft/multi-agent-reference-architecture/stargazers)
 
