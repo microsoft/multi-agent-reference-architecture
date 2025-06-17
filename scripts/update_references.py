@@ -26,7 +26,8 @@ ignored_files = [
 ]
 
 ignored_links = [
-    "https://buttons.github.io/buttons.js"
+    "https://buttons.github.io/buttons.js",
+    "https://img.shields.io/github/stars/microsoft/multi-agent-reference-architecture?style=social"
 ]
 
 # File to store the updated reference list
