@@ -32,4 +32,4 @@ agents’ roles, your SLA needs, and your team's operational capabilities.
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}

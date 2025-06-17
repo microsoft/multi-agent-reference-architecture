@@ -141,4 +141,4 @@ of agent-based systems in real-world deployments.
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}

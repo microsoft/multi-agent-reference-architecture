@@ -83,4 +83,4 @@ For implementation guidance and control validation, refer to the
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}

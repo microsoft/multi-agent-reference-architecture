@@ -141,4 +141,4 @@ it.
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}

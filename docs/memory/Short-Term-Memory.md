@@ -277,4 +277,4 @@ a set number of days. This practice serves several key purposes:
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}

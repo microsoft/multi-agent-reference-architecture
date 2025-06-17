@@ -12,4 +12,4 @@ _Last updated: 2025-05-14_
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../components/discuss-button.hbs }}

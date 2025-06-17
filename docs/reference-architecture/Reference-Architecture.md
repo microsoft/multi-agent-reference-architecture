@@ -348,4 +348,4 @@ List of patterns that guided the proposed architecture.
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}

@@ -21,4 +21,4 @@ on technical goals, but also on your organization's structure and team dynamics.
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}

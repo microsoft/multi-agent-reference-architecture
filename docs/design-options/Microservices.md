@@ -132,4 +132,4 @@ Consider starting with microservices in the following situations:
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}

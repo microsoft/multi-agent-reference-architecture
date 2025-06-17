@@ -181,4 +181,4 @@ for a detailed walkthrough.
 
 ---
 
-{{ #include ../../components/discuss-button.md }}
+{{ #include ../../components/discuss-button.hbs }}
