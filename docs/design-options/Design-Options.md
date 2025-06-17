@@ -21,6 +21,4 @@ on technical goals, but also on your organization's structure and team dynamics.
 
 ---
 
-<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture/discussions/new?category=q-a&body=Source: [Design Options](https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/design-options/Design-Options.md)" data-icon="octicon-comment-discussion" target="_blank" data-size="large" aria-label="Discuss buttons/github-buttons on GitHub">Discuss this page</a>
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+{{ #include ../../components/discuss-button.hbs }}
