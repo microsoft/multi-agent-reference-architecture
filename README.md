@@ -1,8 +1,8 @@
 # Multi-Agent Reference Architecture
 
-<a class="github-button" href="https://github.com/microsoft/multi-agent-reference-architecture" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Give us a start on GitHub">Star</a>
+{{ #include components/stars-badge.hbs }}
 
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/multi-agent-reference-architecture?style=social)](https://github.com/microsoft/multi-agent-reference-architecture/stargazers)
 
 This repository presents a conceptual guide, complemented by practical
 resources, for architecting robust multi-agent systems. The focus is not on
