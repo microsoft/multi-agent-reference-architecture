@@ -1,7 +1,5 @@
 # Multi-Agent Reference Architecture
 
-{{ #include components/stars-badge.hbs }}
-
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/multi-agent-reference-architecture?style=social)](https://github.com/microsoft/multi-agent-reference-architecture/stargazers)
 
 This repository presents a conceptual guide, complemented by practical
