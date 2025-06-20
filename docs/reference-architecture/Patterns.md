@@ -94,6 +94,41 @@ sequenceDiagram
 - Orchestrator chains skills with memory, planning, and goals.
 - Benefit: Encourages modular and context-aware execution.
 
+```mermaid
+sequenceDiagram
+    title Semantic Kernel Orchestration with Skills
+
+    participant User
+    participant Orch as SK-Orchestrator
+    participant Memory
+    participant Planner
+    participant Goal
+    participant SkillA as Skill: Search
+    participant SkillB as Skill: Summarize
+    participant SkillC as Skill: Recommend
+
+    User->>Orch: Submit query / task
+    Orch->>Memory: Retrieve context
+    Memory-->>Orch: Return relevant memory
+
+    Orch->>Planner: Analyze task and context
+    Planner-->>Orch: Return skill execution plan
+
+    Orch->>Goal: Evaluate intent and goal alignment
+    Goal-->>Orch: Confirm objective
+
+    Orch->>SkillA: Execute Skill: Search
+    SkillA-->>Orch: Return search results
+
+    Orch->>SkillB: Execute Skill: Summarize
+    SkillB-->>Orch: Return summary
+
+    Orch->>SkillC: Execute Skill: Recommend
+    SkillC-->>Orch: Return recommendation
+
+    Orch-->>User: Deliver final result
+```
+
 ## 4. Local & Remote Agent Execution
 
 **Federated agent model with supervisor coordination.**
@@ -101,6 +136,56 @@ sequenceDiagram
 - Local supervisor delegates tasks to local or remote agents.
 - Secure channels maintain observability and traceability.
 - Benefit: Enables scalability across networks or geographies.
+
+```mermaid
+sequenceDiagram
+    title Local & Remote Agent Execution
+    participant User
+    participant UserApp as User Application
+    participant Orch as SK-Orchestrator
+    participant Class as Classifier
+    participant Super as Supervisor Agent
+    participant AgReg as Agent Registry
+    participant Agent1 as Agent 1 (Local)
+    participant Agent2 as Agent 2 (Remote)
+    participant KnowL as Knowledge Layer
+    participant StorL as Storage Layer
+    
+    User->>UserApp: 1. Submit complex query
+    UserApp->>Orch: 2. Forward request
+    Orch->>StorL: 3. Load conversation history
+    StorL-->>Orch: 4. Return context
+    Orch->>Class: 5. Classify query
+    Class->>Class: 6. Determine multi-agent needed
+    Class->>AgReg: 7. Get matching agents
+    AgReg-->>Class: 8. Return Agents 1 & 2
+    Class-->>Orch: 9. Return classification
+    
+    Orch->>Orch: 10. Allocate context window
+    Orch->>Super: 11. Coordinate multi-agent task
+    Super->>Super: 12. Decompose task
+    Super->>Agent1: 13. Process part 1
+    Super->>Agent2: 14. Process part 2
+    
+    Agent1->>KnowL: 15. Query knowledge
+    KnowL-->>Agent1: 16. Return information
+    Agent2->>KnowL: 17. Query knowledge
+    KnowL-->>Agent2: 18. Return information
+    
+    Agent1->>Agent1: 19. Generate response 1
+    Agent2->>Agent2: 20. Generate response 2
+    Agent1-->>Super: 21. Return part 1
+    Agent2-->>Super: 22. Return part 2
+    
+    Super->>Super: 23. Merge responses
+    Super->>Super: 24. Synthesize final response
+    Super-->>Orch: 25. Return unified response
+    
+    Orch->>StorL: 26. Store interaction
+    StorL-->>Orch: 27. Acknowledge
+    Orch-->>UserApp: 28. Return response
+    UserApp-->>User: 29. Display answer
+```
 
 ## 5. Layered (Onion) Architecture
 
@@ -117,6 +202,27 @@ sequenceDiagram
 - MCP server abstracts tool APIs from agents.
 - Policies control access, parameters, and invocation flow.
 - Benefit: Adds auditability, policy enforcement, and centralized logic.
+
+```mermaid
+sequenceDiagram
+    title MCP Integration Layer – Decoupled Agent-to-Investment Tool Invocation
+
+    participant Agent as Agent (e.g. Investment Advisor)
+    participant MCP as MCP Server
+    participant Policy as Policy Engine
+    participant Tool as Tool API (e.g. StockQuotes, RiskAnalysis)
+    participant Audit as Audit Log
+
+    Agent->>MCP: Request to invoke "GetStockQuote" tool (e.g. for AAPL)
+    MCP->>Policy: Evaluate access rules and validate parameters
+    Policy-->>MCP: Access granted with constraints
+
+    MCP->>Tool: Call StockQuotes API with validated input
+    Tool-->>MCP: Return quote data (price, volume, trend)
+
+    MCP->>Audit: Log tool invocation and response
+    MCP-->>Agent: Return investment data result
+```
 
 ## 7. RAG (Retrieval-Augmented Generation)
 
