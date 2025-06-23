@@ -212,3 +212,7 @@ sequenceDiagram
     Skill 2-->>Orchestrator: Output 2
     Orchestrator->>Memory: Save updated context
 ```
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

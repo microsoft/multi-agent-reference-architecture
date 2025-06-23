@@ -17,3 +17,7 @@ Designing STM and LTM in multi-agent systems brings unique challenges around
 synchronization, ownership, privacy, and data consistency. The following
 sections outline key patterns and trade-offs for integrating effective memory
 into your architecture.
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

@@ -29,3 +29,7 @@ For reference:
 - [Open Telemetry Signals Concepts](https://opentelemetry.io/docs/concepts/signals/)
 - [What is OpenTelemetry?](https://opentelemetry.io/docs/what-is-opentelemetry/)
 - [OpenTelemetry – an open standard for collecting telemetry data.](https://opentelemetry.io/)
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

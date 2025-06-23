@@ -18,3 +18,7 @@ maintainability, team coordination, and operational complexity. This
 documentation explores those trade-offs and offers guidance to help you choose
 and implement the right architecture for your multi-agent system—based not only
 on technical goals, but also on your organization's structure and team dynamics.
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

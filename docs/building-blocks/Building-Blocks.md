@@ -64,3 +64,7 @@ stateDiagram
 
 > Additional reference of orchestration patterns:
 > [Semantic Kernel: Multi-agent Orchestration](https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-multi-agent-orchestration/)
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

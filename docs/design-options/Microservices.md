@@ -129,3 +129,7 @@ Consider starting with microservices in the following situations:
 
 - [Microservices Guide](https://martinfowler.com/microservices/)
 - [Microservices Patterns](https://microservices.io/patterns/index.html)
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

@@ -41,3 +41,7 @@ foundations rather than rigid requirements:
 | Context Management                        | Establish clear rules and policies regarding what context or conversational state is shared among agents and for how long. Carefully control context propagation to avoid privacy issues, data leakage, or logic confusion.                                                                                                                                                                                             |
 
 <!-- markdownlint-disable MD013 -->
+
+---
+
+{{ #include ../components/discuss-button.hbs }}

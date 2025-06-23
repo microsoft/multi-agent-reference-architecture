@@ -274,3 +274,7 @@ a set number of days. This practice serves several key purposes:
    documents from STM to a cold storage.
 3. **Indexing for Analytics:** Optionally, batch-load archived data into an
    analytics warehouse for reporting and custom queries.
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

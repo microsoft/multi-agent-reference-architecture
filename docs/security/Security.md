@@ -128,3 +128,7 @@ guide
 
 For implementation details and threat modeling scenarios, refer to the
 [Threat Model Worksheet](./the).
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

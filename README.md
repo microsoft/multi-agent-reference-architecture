@@ -1,5 +1,7 @@
 # Multi-Agent Reference Architecture
 
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/multi-agent-reference-architecture?style=social)](https://github.com/microsoft/multi-agent-reference-architecture/stargazers)
+
 This repository presents a conceptual guide, complemented by practical
 resources, for architecting robust multi-agent systems. The focus is not on
 building an individual agent, but on the unique challenges and effectiveness of

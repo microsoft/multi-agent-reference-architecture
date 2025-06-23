@@ -110,3 +110,7 @@ roadmap as follows:
 
 - Ensure users and stakeholders understand system capabilities and boundaries,
   particularly in customer-facing scenarios.
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

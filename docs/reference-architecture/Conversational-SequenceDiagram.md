@@ -50,3 +50,7 @@ sequenceDiagram
     Orch-->>UserApp: 28. Return response
     UserApp-->>User: 29. Display answer
 ```
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}

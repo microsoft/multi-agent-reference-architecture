@@ -80,3 +80,7 @@ vector data. **Mitigation:**
 
 For implementation guidance and control validation, refer to the
 [Security Architecture Guide](./Multi-agent-security.md).
+
+---
+
+{{ #include ../../components/discuss-button.hbs }}
