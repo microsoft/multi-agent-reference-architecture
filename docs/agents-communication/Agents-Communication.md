@@ -6,7 +6,7 @@ This chapter introduces two foundational paradigms for agent interaction:
 request-based and message-driven communication. These models shape how agents
 coordinate, scale, and recover in distributed systems.
 
-- [Request-Based Communication](./Request-Driven.md): Agents communicate by
+- [Request-Based Communication](./Request-Based.md): Agents communicate by
   sending direct requests to one another—through synchronous or asynchronous
   interactions— offering predictability and simplicity, making it well-suited
   for tightly coupled or latency-sensitive scenarios.

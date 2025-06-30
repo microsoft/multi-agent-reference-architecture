@@ -8,7 +8,7 @@
   - [Agents as microservices](./docs/design-options/Microservices.md)
 - [Agents registry](./docs/agent-registry/Agent-Registry.md)
 - [Agents communication](./docs/agents-communication/Agents-Communication.md)
-  - [Request-based](./docs/agents-communication/Request-Driven.md)
+  - [Request-based](./docs/agents-communication/Request-Based.md)
   - [Message-driven](./docs/agents-communication/Message-Driven.md)
   - [Data exchange protocols]()
 - [Memory](./docs/memory/Memory.md)
