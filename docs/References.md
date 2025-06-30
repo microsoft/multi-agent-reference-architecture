@@ -1,6 +1,6 @@
 # References
 
-_Last updated: 2025-06-04_
+_Last updated: 2025-06-30_
 
 ## Orchestration
 
@@ -46,6 +46,8 @@ _Last updated: 2025-06-04_
 
 ## Communication Patterns & Protocols
 
+### Request-based
+
 - [Asynchronous Request-Reply pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply)
 - [A Survey of Agent Interoperability Protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)](https://arxiv.org/html/2505.02279v1)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
@@ -59,6 +61,11 @@ _Last updated: 2025-06-04_
 - [ACP Agent Detail Specification](https://agentcommunicationprotocol.dev/core-concepts/agent-detail)
 - [ACP Agent Detail Spec](https://agentcommunicationprotocol.dev/core-concepts/agent-detail#schema-metadata)
 - [ACP Documentation on Agent Registry](https://agentcommunicationprotocol.dev/core-concepts/agent-discovery#registry-based-discovery)
+
+### Message-driven
+
+- [Choose between Azure messaging services](https://learn.microsoft.com/en-us/azure/service-bus-messaging/compare-messaging-services)
+- [A Distributed State of Mind: Event-Driven Multi-Agent Systems](https://www.confluent.io/blog/event-driven-multi-agent-systems)
 
 ---
 
