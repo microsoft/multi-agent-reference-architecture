@@ -1,8 +1,8 @@
-# Request-Driven Communication in Multi-Agent Systems
+# Request-Based Communication in Multi-Agent Systems
 
 _Last updated: 2025-06-04_
 
-In a request-driven model, all interactions—between clients, orchestrators, and
+In a request-based model, all interactions—between clients, orchestrators, and
 expert agents—are initiated by explicit requests. A central orchestrator
 receives the client's request, plans the workflow, and delegates tasks to
 specialized agents. Each agent processes its task independently and returns
@@ -226,8 +226,8 @@ sequenceDiagram
   than receiving instantaneous notifications—potentially increasing perceived
   latency.
 
-> Event-driven alternatives (such as webhooks or message queues) will be covered
-> in [Event-driven Communication](./Event-Driven-Communication.md).
+> Message-driven alternatives (such as webhooks, message queues and brokers)
+> will be covered in [Message-driven Communication](./Message-Driven.md).
 
 #### Server-Streaming
 
