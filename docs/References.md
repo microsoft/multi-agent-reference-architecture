@@ -70,3 +70,7 @@ _Last updated: 2025-06-30_
 ---
 
 {{ #include ../components/discuss-button.hbs }}
+
+## New Links identified
+
+- [What are evaluators? - Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability#what-are-evaluators)
