@@ -1,25 +1,41 @@
 # Observability
 
-_Last updated: 2025-05-13_
+_Last updated: 2025-07-01_
 
-As AI solutions evolve into complex, distributed systems—especially when
-leveraging multi-agent architectures—observability becomes essential to ensure
-reliability, performance, and trust. Observability is the capability to
-understand the internal state of a system based solely on its external outputs.
-This is not just about identifying when something breaks, but understanding why.
+Observability is the capability to understand the internal state of a system
+based solely on its external outputs. This is not just about identifying when
+something breaks, but understanding why.
 
-Observability is built on three core pillars:
+Traditional observability relies on three foundational pillars:
 
-- Logs: Discrete events and contextual information about what the system is
-  doing.
-- Metrics: Numerical data points that provide insight into system health and
-  usage.
-- Traces: End-to-end visibility into the flow of a request across services or
-  agents.
+- **Logs**: Discrete events and contextual information about system operations
+- **Metrics**: Numerical data points indicating system health and usage
+- **Traces**: End-to-end visibility into request flows across services or agents
 
-Together, these form the telemetry data needed to assess system behavior in real
-time. Unlike traditional debugging, observability enables proactive monitoring
-and faster incident response, which is critical for enterprise-grade AI systems.
+As AI solutions evolve into complex distributed systems, especially multi-agent
+architectures, they introduce unique challenges that require extending the
+observability practices. How do you validate non-deterministic outputs? How do
+you prevent AI-generated problems?
+
+This new context require a fourth pillar: **evaluators**. Evaluators complement
+traditional telemetry by providing systematic assessment of AI behavior, output
+quality, and decision-making processes. They enable engineering teams to apply
+fundamental principles such as:
+
+- **Reliability Engineering**: Ensuring consistent, predictable AI behavior
+  across different scenarios and workloads
+- **Quality Assurance**: Systematic validation of AI outputs against expected
+  standards and business requirements
+- **Safety by Design**: Proactive identification and mitigation of harmful or
+  inappropriate AI responses
+- **Continuous Improvement**: Data-driven feedback loops for model and system
+  optimization
+
+Together, traditional observability pillars and evaluators form a comprehensive
+framework that enables real-time assessment of both system behavior and AI
+output quality. This holistic approach is critical for AI systems, enabling
+proactive monitoring, faster incident response, and continuous validation of AI
+reliability and safety.
 
 For reference:
 
@@ -29,6 +45,7 @@ For reference:
 - [Open Telemetry Signals Concepts](https://opentelemetry.io/docs/concepts/signals/)
 - [What is OpenTelemetry?](https://opentelemetry.io/docs/what-is-opentelemetry/)
 - [OpenTelemetry – an open standard for collecting telemetry data.](https://opentelemetry.io/)
+- [What are evaluators? - Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability#what-are-evaluators)
 
 ---
 
