@@ -30,13 +30,7 @@ introduces strategies for optimizing context, focusing on two main objectives:
 > simpler or more efficient components instead of language models.
 
 Effective context optimization improves response quality, reduces computational
-overhead, and enables scalable, collaborative multi-agent systems. This chapter
-provides practical techniques to help engineering teams balance context richness
-with efficiency:
-
-- [Iteractive Optimization Loop](./Iteractive-Optimization-Loop.md)
-- [Agents orchestration](./Agents-Orchestration.md)
-- [Tools](./Tools.md)
+overhead, and enables scalable, collaborative multi-agent systems.
 
 ---
 
