@@ -35,6 +35,7 @@ _Last updated: 2025-06-30_
 - [Observability defined by CNCF](https://www.cncf.io/blog/2024/06/25/your-guide-to-observability-engineering-in-2024/)
 - [Observability in Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/concepts/enterprise-readiness/observability/)
 - [What are evaluators? - Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability#what-are-evaluators)
+- [Agent Evaluation in 2025: Complete Guide](https://orq.ai/blog/agent-evaluation)
 
 ## Architecture design
 

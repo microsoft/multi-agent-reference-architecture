@@ -1,6 +1,6 @@
 # Observability
 
-_Last updated: 2025-07-01_
+_Last updated: 2025-07-03_
 
 Observability is the capability to understand the internal state of a system
 based solely on its external outputs. This is not just about identifying when
@@ -12,30 +12,34 @@ Traditional observability relies on three foundational pillars:
 - **Metrics**: Numerical data points indicating system health and usage
 - **Traces**: End-to-end visibility into request flows across services or agents
 
-As AI solutions evolve into complex distributed systems, especially multi-agent
-architectures, they introduce unique challenges that require extending the
-observability practices. How do you validate non-deterministic outputs? How do
-you prevent AI-generated problems?
+## Multi-agent observability challenges
 
-This new context require a fourth pillar: **evaluators**. Evaluators complement
-traditional telemetry by providing systematic assessment of AI behavior, output
-quality, and decision-making processes. They enable engineering teams to apply
-fundamental principles such as:
+Building observable multi-agent systems requires extending this pillars to
+address unique AI challenges capturing signals across the following core areas:
 
-- **Reliability Engineering**: Ensuring consistent, predictable AI behavior
-  across different scenarios and workloads
-- **Quality Assurance**: Systematic validation of AI outputs against expected
-  standards and business requirements
-- **Safety by Design**: Proactive identification and mitigation of harmful or
-  inappropriate AI responses
-- **Continuous Improvement**: Data-driven feedback loops for model and system
-  optimization
+- **[Agent Communication](./agent-communication.md)**: Tracking inter-agent
+  message flows, coordination patterns, and communication bottlenecks
+- **[Performance Monitoring](./performance-monitoring.md)**: Measuring response
+  times, resource utilization, and throughput across distributed agents
+- **[Error Handling](./error-handling.md)**: Detecting failures, cascading
+  errors, and recovery mechanisms in agent workflows
+- **[Security & Compliance](./security-compliance.md)**: Monitoring for
+  unauthorized access, data leaks, and regulatory compliance across agent
+  interactions
 
-Together, traditional observability pillars and evaluators form a comprehensive
-framework that enables real-time assessment of both system behavior and AI
-output quality. This holistic approach is critical for AI systems, enabling
-proactive monitoring, faster incident response, and continuous validation of AI
-reliability and safety.
+### Evaluation-Driven Observability
+
+**Evaluators** are a systematic approach to assessing agent behavior across
+controlled inputs, edge cases, and expected outcomes. They provide quantitative
+metrics such as relevance, factual accuracy, and tool call precision, supporting
+validation during development and regression testing.
+
+When integrated into production, **evaluators** enable observability-driven
+assessments, extending traditional telemetry with runtime quality signals. This
+allows for detection of behavior drift, degraded output quality, and performance
+regressions that are not captured by logs or infrastructure metrics alone.
+
+For AI evaluation strategies, see the **[Evaluation](../evaluation/)** section.
 
 For reference:
 
@@ -46,6 +50,7 @@ For reference:
 - [What is OpenTelemetry?](https://opentelemetry.io/docs/what-is-opentelemetry/)
 - [OpenTelemetry – an open standard for collecting telemetry data.](https://opentelemetry.io/)
 - [What are evaluators? - Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability#what-are-evaluators)
+- [Agent Evaluation in 2025: Complete Guide](https://orq.ai/blog/agent-evaluation)
 
 ---
 
