@@ -67,6 +67,12 @@ _Last updated: 2025-06-30_
 - [Choose between Azure messaging services](https://learn.microsoft.com/en-us/azure/service-bus-messaging/compare-messaging-services)
 - [A Distributed State of Mind: Event-Driven Multi-Agent Systems](https://www.confluent.io/blog/event-driven-multi-agent-systems)
 
+## Context Engineering
+
+- [OpenAI Function Calling Guide](https://platform.openai.com/docs/guides/function-calling?api-mode=chat)
+
 ---
 
 {{ #include ../components/discuss-button.hbs }}
+
+## New Links identified
