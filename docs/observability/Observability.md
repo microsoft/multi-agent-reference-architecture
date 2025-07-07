@@ -14,8 +14,10 @@ Traditional observability relies on three foundational pillars:
 
 ## Multi-agent observability challenges
 
-Building observable multi-agent systems requires extending this pillars to
-address unique AI challenges capturing signals across the following core areas:
+Building observable multi-agent systems requires extending these pillars to
+address unique AI challenges. Teams must capture specialized signals including
+agent actions, tool usage, model calls, and response patterns to effectively
+debug and improve agent performance across the following core areas:
 
 - **[Agent Communication](./agent-communication.md)**: Tracking inter-agent
   message flows, coordination patterns, and communication bottlenecks
@@ -29,17 +31,13 @@ address unique AI challenges capturing signals across the following core areas:
 
 ### Evaluation-Driven Observability
 
-**Evaluators** are a systematic approach to assessing agent behavior across
-controlled inputs, edge cases, and expected outcomes. They provide quantitative
-metrics such as relevance, factual accuracy, and tool call precision, supporting
-validation during development and regression testing.
+Observability gives us metrics, but **evaluation** is the process of analyzing
+that data (and performing tests) to determine how well an AI agent is performing
+and how it can be improved. In other words, once we have traces and metrics, how
+we can use them to judge the agent and make decisions?
 
-When integrated into production, **evaluators** enable observability-driven
-assessments, extending traditional telemetry with runtime quality signals. This
-allows for detection of behavior drift, degraded output quality, and performance
-regressions that are not captured by logs or infrastructure metrics alone.
-
-For AI evaluation strategies, see the **[Evaluation](../evaluation/)** section.
+For AI evaluation strategies, see the
+**[Evaluation](../evaluation/Evaluation.md)** section.
 
 For reference:
 
@@ -51,6 +49,7 @@ For reference:
 - [OpenTelemetry – an open standard for collecting telemetry data.](https://opentelemetry.io/)
 - [What are evaluators? - Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability#what-are-evaluators)
 - [Agent Evaluation in 2025: Complete Guide](https://orq.ai/blog/agent-evaluation)
+- [AI Agent Observability and Evaluation](https://huggingface.co/learn/agents-course/bonus-unit2/what-is-agent-observability-and-evaluation)
 
 ---
 

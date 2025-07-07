@@ -36,6 +36,7 @@ _Last updated: 2025-06-30_
 - [Observability in Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/concepts/enterprise-readiness/observability/)
 - [What are evaluators? - Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability#what-are-evaluators)
 - [Agent Evaluation in 2025: Complete Guide](https://orq.ai/blog/agent-evaluation)
+- [AI Agent Observability and Evaluation](https://huggingface.co/learn/agents-course/bonus-unit2/what-is-agent-observability-and-evaluation)
 
 ## Architecture design
 
