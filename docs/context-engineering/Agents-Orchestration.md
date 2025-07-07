@@ -76,7 +76,7 @@ sequenceDiagram
   considered as context for the language model, reducing AI costs and improving
   the language model's ability to efficiently select agents.
 - **Scalability**: Supports large numbers of specialized agent tools without
-  overloading the language model context. logic.
+  overloading the language model context.
 
 **Tradeoffs**
 
