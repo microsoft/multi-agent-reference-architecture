@@ -137,7 +137,7 @@ sequenceDiagram box Data Preparation
   risk.
 - **Storage Overhead**: Maintaining a semantic cache requires additional storage
   resources, which can grow with the number of cached items. Using a
-  time-to-live (TTL) for cached items helps to avoid it to grow to enormous
+  time-to-live (TTL) for cached items helps avoid it growing to an enormous
   size.
 - **Potential for Staleness**: Cached results might become outdated if the
   underlying agent tools' information changes, leading to irrelevant or
