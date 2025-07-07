@@ -22,7 +22,7 @@ flowchart LR
 
 **Key characteristics**
 
-- **Fast inference**: All specialized agents info is immediately available to
+- **Fast inference**: All specialized agents’ information is immediately available to
   the language model.
 - **Predictable**: The set of agents and their capabilities are fixed at
   runtime.
