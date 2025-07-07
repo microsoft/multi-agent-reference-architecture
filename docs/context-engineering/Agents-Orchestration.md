@@ -121,7 +121,7 @@ sequenceDiagram box Data Preparation
   note over Model: Reasoning
 ```
 
-**Key Characteristics**
+**Key characteristics**
 
 - **Reduced Latency**: By utilizing cached data for similar user prompts, the
   need for executing vector search queries for every request is minimized,
