@@ -67,6 +67,14 @@ _Last updated: 2025-06-30_
 - [Choose between Azure messaging services](https://learn.microsoft.com/en-us/azure/service-bus-messaging/compare-messaging-services)
 - [A Distributed State of Mind: Event-Driven Multi-Agent Systems](https://www.confluent.io/blog/event-driven-multi-agent-systems)
 
+## Context Engineering
+
+- [OpenAI Function Calling Guide](https://platform.openai.com/docs/guides/function-calling?api-mode=chat)
+
+- [Semantic Kernel Decisions: Context-based function selection](https://github.com/markwallace-microsoft/semantic-kernel/blob/main/docs/decisions/0072-context-based-function-selection.md)
+- [Introduction to semantic cache](https://learn.microsoft.com/en-us/azure/cosmos-db/gen-ai/semantic-cache)
+- [Semantic ranking in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/semantic-search-overview)
+
 ---
 
 {{ #include ../components/discuss-button.hbs }}
