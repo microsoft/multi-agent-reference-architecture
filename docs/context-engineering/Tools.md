@@ -45,6 +45,38 @@ This approach provides the following benefits:
   efficiently managed across multiple agents or systems, enabling dynamic data
   updates without embedding them into language model interactions.
 
+### 2. Balancing Tool Granularity and Responsibility
+
+Developers tend to adopt the Single Responsibility Principle (SRP), a common
+practice in traditional software development, to design tools that perform one
+specific task. While this approach promotes clarity and reusability, it can
+introduce processing overhead for language models, including increased reasoning
+complexity, higher token consumption, and additional network latency due to
+multiple tool invocations.
+
+On the other side of the spectrum, designing a single tool to handle multiple
+responsibilities can reduce overhead but often leads to decreased reusability,
+increased implementation complexity, and a higher risk of parameter mismatches
+or incorrect assumptions by the model.
+
+### Recommendations
+
+- **Group closely related responsibilities:** Combine tasks that are frequently
+  used together or share similar input/output structures into a single tool to
+  minimize overhead.
+- **Avoid excessive generalization:** Do not overload tools with unrelated
+  responsibilities, as this can make them harder to maintain and use correctly.
+- **Optimize for model reasoning:** Consider how the language model selects and
+  uses tools. Overly granular tools may increase reasoning steps, while overly
+  broad or generic tools may confuse parameter mapping.
+- **Monitor usage patterns:** Analyze tool invocation logs to identify
+  bottlenecks or frequent multi-tool workflows that could be streamlined.
+- **Iterate and test:** Continuously refine tool boundaries based on real-world
+  usage and model performance, aiming for a balance between efficiency and
+  clarity. The previous
+  [Iterative Optimization Loop](./Iteractive-Optimization-Loop.md) section
+  offers a plan to do this in a structured way.
+
 ---
 
 {{ #include ../../components/discuss-button.hbs }}
