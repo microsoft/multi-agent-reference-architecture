@@ -38,6 +38,11 @@ _Last updated: 2025-06-30_
 - [Agent Evaluation in 2025: Complete Guide](https://orq.ai/blog/agent-evaluation)
 - [AI Agent Observability and Evaluation](https://huggingface.co/learn/agents-course/bonus-unit2/what-is-agent-observability-and-evaluation)
 
+## Evaluation
+
+- [Evaluating Multi-Agent Systems](https://arize.com/docs/phoenix/learn/evaluating-multi-agent-systems)
+- [LLM Evaluation](https://langfuse.com/docs/scores/overview)
+
 ## Architecture design
 
 - [Monolith First by Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html)

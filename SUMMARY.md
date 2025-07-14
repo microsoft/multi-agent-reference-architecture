@@ -15,6 +15,8 @@
   - [Short-term memory](./docs/memory/Short-Term-Memory.md)
   - [Long-term memory]()
 - [Observability](./docs/observability/Observability.md)
+- [Evaluation](./docs/evaluation/Evaluation.md)
+  - [Tool Call Evaluation](.docs/evaluation/ToolCall.md)
 - [Security](./docs/security/Security.md)
 - [Governance](./docs/governance/Governance.md)
   - [Experimentation to productization](./docs/governance/Experimentation-To-Productization.md)
