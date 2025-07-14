@@ -74,6 +74,7 @@ _Last updated: 2025-06-30_
 - [Semantic Kernel Decisions: Context-based function selection](https://github.com/markwallace-microsoft/semantic-kernel/blob/main/docs/decisions/0072-context-based-function-selection.md)
 - [Introduction to semantic cache](https://learn.microsoft.com/en-us/azure/cosmos-db/gen-ai/semantic-cache)
 - [Semantic ranking in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/semantic-search-overview)
+- [Semantic Kernel: Make plugins AI-friendly](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/?pivots=programming-language-python#make-plugins-ai-friendly)
 
 ---
 
