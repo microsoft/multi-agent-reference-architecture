@@ -1,5 +1,7 @@
 # Tools Context for Agents
 
+_Last updated: 2025-07-14_
+
 The ability to perform tasks and interact with external systems is what
 transforms language models from passive responders into active problem solvers.
 The design of those tools directly determines how effectively specialized agents
@@ -76,6 +78,11 @@ or incorrect assumptions by the model.
   clarity. The previous
   [Iterative Optimization Loop](./Iteractive-Optimization-Loop.md) section
   offers a plan to do this in a structured way.
+
+> The
+> [Semantic Kernel: Make plugins AI-friendly](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/?pivots=programming-language-python#make-plugins-ai-friendly)
+> documentation gives an agnostic view of recommendations to design clear and
+> concise tool schemas for language models.
 
 ---
 
