@@ -30,9 +30,9 @@ prompt), should be handled outside of language model interactions. For example:
 
 > Data can be dynamically injected into the language model instructions, or
 > injected in the tool(s) within the lifecycle of the request. <br/><br/>Some
-> models operations such as OpenAI Chat Completions offers a `metadata` field
+> model operations, such as OpenAI Chat Completions, offer a `metadata` field
 > only used for conversation history storage, useful for evaluation and
-> distillation (technique for tranining models with the outcomes of another
+> distillation (technique for training models with the outcomes of another
 > model).
 
 This approach provides the following benefits:
