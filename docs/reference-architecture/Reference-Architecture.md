@@ -1,6 +1,6 @@
 # Reference Architecture
 
-_Last updated: 2025-05-16_
+_Last updated: 2025-08-18_
 
 The architecture below illustrates a modular and governed multi-agent system,
 supporting both local and remote agents through a central orchestration layer.
@@ -9,7 +9,7 @@ interactions, consults a classifier for intent routing, and uses a registry for
 agent discovery and lifecycle management. The system integrates with knowledge
 bases and vector databases, and maintains context and state through a persistent
 storage layer. Integration with external tools is supported through an MCP
-(multi-channel protocol) server. This design ensures flexibility, extensibility,
+(Model Context Protocol) server. This design ensures flexibility, extensibility,
 and strong control boundaries between components, allowing seamless onboarding
 of new models, tools, and communication patterns.
 
