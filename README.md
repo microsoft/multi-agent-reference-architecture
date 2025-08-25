@@ -35,13 +35,13 @@ more detail, just keep reading the next chapters.
 
 ## Table of Content
 
-- [Introduction](docs/Introduction.md)
-- [Building blocks](docs/building-blocks/Building-Blocks.md)
+- [Introduction](./docs/Introduction.md)
+- [Building blocks](./docs/building-blocks/Building-Blocks.md)
 - [Design options](./docs/design-options/Design-Options.md)
 - [Agents registry](./docs/agent-registry/Agent-Registry.md)
 - [Memory](./docs/memory/Memory.md)
-- [Agents communication](docs/agents-communication/Agents-Communication.md)
-- [Observability](docs/observability/Observability.md)
-- [Security](docs/security/Security.md)
-- [Governance](docs/governance/Governance.md)
-- [Reference Architecture](/docs/reference-architecture/Reference-Architecture.md)
+- [Agents communication](./docs/agents-communication/Agents-Communication.md)
+- [Observability](./docs/observability/Observability.md)
+- [Security](./docs/security/Security.md)
+- [Governance](./docs/governance/Governance.md)
+- [Reference Architecture](./docs/reference-architecture/Reference-Architecture.md)
