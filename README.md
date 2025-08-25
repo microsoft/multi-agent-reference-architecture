@@ -29,7 +29,7 @@ architectures or build them from the ground up.
 > matures.
 
 If you want to jump straight to the architecture reference, check out the
-[Reference Architecture](/docs/reference-architecture/Reference-Architecture.md)
+[Reference Architecture](./docs/reference-architecture/Reference-Architecture.md)
 chapter. Otherwise, if you'd like to explore the concepts and recommendations in
 more detail, just keep reading the next chapters.
 
