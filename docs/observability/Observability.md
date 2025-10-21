@@ -8,15 +8,14 @@ This involves capturing specialized signals such as agent actions, tool usage,
 model invocations, and response patterns, to effectively debug, monitor, and
 optimize agent performance across key areas:
 
-- **[Agent Communication](./agent-communication.md)**: Tracking inter-agent
+- **Agent Communication**: Tracking inter-agent
   message flows, coordination patterns, and communication bottlenecks
-- **[Performance Monitoring](./performance-monitoring.md)**: Measuring response
+- **Performance Monitoring**: Measuring response
   times, resource utilization, and throughput across distributed agents
-- **[Error Handling](./error-handling.md)**: Detecting failures, cascading
+- **Error Handling**: Detecting failures, cascading
   errors, and recovery mechanisms in agent workflows
-- **[Security & Compliance](./security-compliance.md)**: Monitoring for
-  unauthorized access, data leaks, and regulatory compliance across agent
-  interactions
+- **Security & Compliance**: Monitoring for unauthorized access, data leaks,
+and regulatory compliance across agent interactions
 
 ### Evaluation-Driven Observability
 
