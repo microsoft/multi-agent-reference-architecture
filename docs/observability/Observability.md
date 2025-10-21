@@ -4,10 +4,10 @@ _Last updated: 2025-07-03_
 
 ## Multi-agent observability challenges
 
-Building observable multi-agent systems requires expanding the traditional 
-pillars of logs, metrics, and traces to address the unique challenges of AI. 
+Building observable multi-agent systems requires expanding the traditional
+pillars of logs, metrics, and traces to address the unique challenges of AI.
 This involves capturing specialized signals such as agent actions, tool usage,
-model invocations, and response patterns, to effectively debug, monitor, and 
+model invocations, and response patterns, to effectively debug, monitor, and
 optimize agent performance across key areas:
 
 - **[Agent Communication](./agent-communication.md)**: Tracking inter-agent
