@@ -117,40 +117,6 @@ data require enhanced evaluation rigor:
 
 ## Evaluation strategies by system component
 
-```mermaid
-stateDiagram-v2
-
-[*] --> Orchestrator
-
-Orchestrator --> Registry
-Orchestrator --> Agent1
-Orchestrator --> AgentN
-Orchestrator --> Memory
-Agent1 --> Memory
-AgentN --> Memory
-
-Orchestrator --> IntentResolution
-Orchestrator --> PlanOptimization
-Orchestrator --> ResponseSynthesis
-Orchestrator --> ErrorHandling
-
-Registry --> DiscoveryAccuracy
-Registry --> MetadataIntegrity
-Registry --> PerformanceTracking
-Registry --> VersionCompatibility
-
-Agent1 --> TaskCompletion1
-Agent1 --> ToolUsage1
-Agent1 --> ResponseQuality1
-Agent1 --> EdgeCaseHandling1
-
-AgentN --> TaskCompletionN
-AgentN --> ToolUsageN
-AgentN --> ResponseQualityN
-AgentN --> EdgeCaseHandlingN
-
-```
-
 ### Orchestrator agent evaluation
 
 - **Intent resolution**: Validate correct routing and task decomposition
@@ -163,8 +129,7 @@ AgentN --> EdgeCaseHandlingN
 
 - **Task completion**: Measure accuracy and completeness of domain-specific
   outputs
-- **Tool call**:
-  [Validate correct function/tool calling and API interactions](../evaluation/ToolCall.md)
+- **Tool call**: [Validate correct function/tool calling and API interactions](../evaluation/ToolCall.md)
 - **Response quality**: Assess output relevance, accuracy, and formatting
 - **Boundary handling**: Test behavior at capability limits and edge cases
 
