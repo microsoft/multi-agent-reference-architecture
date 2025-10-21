@@ -1,6 +1,6 @@
 # Tool Call Evaluation
 
-*Last updated: 2025-10-21*
+_Last updated: 2025-10-21_
 
 This document outlines the importance of evaluating tool usage. It defines the
 characteristics of successful tool invocations, and strategies to assess
@@ -11,7 +11,7 @@ their correctness and alignment with intended behavior.
 In agent-based architectures, **tool calls** represent the bridge between
 reasoning and action.
 
-Evaluate this steps is essential for understanding how well the agente
+Evaluate this steps is essential for understanding how well the agent
 translates intent into action, whether it invokes the appropriate tool, and if
 the execution contributes meaningfully to solving the user's request.
 

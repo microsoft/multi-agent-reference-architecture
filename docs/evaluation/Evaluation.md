@@ -1,6 +1,13 @@
 # Evaluation
 
-_Last updated: 2025-07-14_
+_Last updated: 2025-10-21_
+
+While **[observability](../observability/Observability.md)** provides the
+instrumentation to collect metrics and traces, evaluation analyzes that data to
+determine how well agents are performing against defined success criteria and
+business requirements.
+
+## Multi-agent evaluation challenges
 
 Multi-agent systems introduce evaluation complexities like:
 

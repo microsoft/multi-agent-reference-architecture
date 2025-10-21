@@ -1,8 +1,6 @@
 # Observability
 
-_Last updated: 2025-07-03_
-
-## Multi-agent observability challenges
+_Last updated: 2025-10-21_
 
 Building observable multi-agent systems requires expanding the traditional
 pillars of logs, metrics, and traces to address the unique challenges of AI.
@@ -34,13 +32,6 @@ For reference:
 
 - [Monitoring Generative AI applications](https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/monitoring/monitoring)
 - [Observability in Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/concepts/enterprise-readiness/observability/)
-- [Observability defined by CNCF](https://www.cncf.io/blog/2024/06/25/your-guide-to-observability-engineering-in-2024/)
-- [Open Telemetry Signals Concepts](https://opentelemetry.io/docs/concepts/signals/)
-- [What is OpenTelemetry?](https://opentelemetry.io/docs/what-is-opentelemetry/)
-- [OpenTelemetry – an open standard for collecting telemetry data.](https://opentelemetry.io/)
-- [What are evaluators? - Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability#what-are-evaluators)
-- [Agent Evaluation in 2025: Complete Guide](https://orq.ai/blog/agent-evaluation)
-- [AI Agent Observability and Evaluation](https://huggingface.co/learn/agents-course/bonus-unit2/what-is-agent-observability-and-evaluation)
 
 ---
 
