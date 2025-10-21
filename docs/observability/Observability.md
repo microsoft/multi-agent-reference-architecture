@@ -2,22 +2,13 @@
 
 _Last updated: 2025-07-03_
 
-Observability is the capability to understand the internal state of a system
-based solely on its external outputs. This is not just about identifying when
-something breaks, but understanding why.
-
-Traditional observability relies on three foundational pillars:
-
-- **Logs**: Discrete events and contextual information about system operations
-- **Metrics**: Numerical data points indicating system health and usage
-- **Traces**: End-to-end visibility into request flows across services or agents
-
 ## Multi-agent observability challenges
 
-Building observable multi-agent systems requires extending these pillars to
-address unique AI challenges. Teams must capture specialized signals including
-agent actions, tool usage, model calls, and response patterns to effectively
-debug and improve agent performance across the following core areas:
+Building observable multi-agent systems requires expanding the traditional 
+pillars of logs, metrics, and traces to address the unique challenges of AI. 
+This involves capturing specialized signals such as agent actions, tool usage,
+model invocations, and response patterns, to effectively debug, monitor, and 
+optimize agent performance across key areas:
 
 - **[Agent Communication](./agent-communication.md)**: Tracking inter-agent
   message flows, coordination patterns, and communication bottlenecks

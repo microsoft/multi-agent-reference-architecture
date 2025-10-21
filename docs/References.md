@@ -78,3 +78,8 @@ _Last updated: 2025-06-30_
 ---
 
 {{ #include ../components/discuss-button.hbs }}
+
+## New Links identified
+
+- [Agent evaluators](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/evaluation-evaluators/agent-evaluators)
+- [ToolCallAccuracyEvaluator (Microsoft / .NET)](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.evaluation.quality.toolcallaccuracyevaluator?view=net-9.0-pp)

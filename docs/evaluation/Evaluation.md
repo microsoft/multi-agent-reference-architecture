@@ -2,12 +2,6 @@
 
 _Last updated: 2025-07-14_
 
-Evaluation is the systematic assessment of multi-agent AI systems to determine
-performance, reliability, and alignment with business objectives. Unlike
-traditional software testing, AI agent evaluation requires specialized
-approaches to handle non-deterministic behavior, complex interaction patterns,
-and emergent system dynamics.
-
 Multi-agent systems introduce evaluation complexities like:
 
 - **Path optimization**: Agents may reach correct solutions through inefficient
@@ -115,9 +109,6 @@ data require enhanced evaluation rigor:
 > requirements.
 
 ## Evaluation strategies by system component
-
-Based on our reference architecture, evaluation should be applied systematically
-across all core components:
 
 ```mermaid
 stateDiagram-v2
