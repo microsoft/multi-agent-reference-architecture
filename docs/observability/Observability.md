@@ -17,7 +17,7 @@ optimize agent performance across key areas:
 - **Security & Compliance**: Monitoring for unauthorized access, data leaks,
 and regulatory compliance across agent interactions
 
-### Evaluation-Driven Observability
+## Evaluation-Driven Observability
 
 Observability gives us metrics, but **evaluation** is the process of analyzing
 that data (and performing tests) to determine how well an AI agent is performing

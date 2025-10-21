@@ -80,8 +80,8 @@ call introspection at scale.
 
 * **Log consistently**: Include tool name, arguments, results, timestamps,
 and agent metadata.
-*(Always ensure sensitive or personally identifiable information (PII) is
-protected or redacted according to data governance policies)*.
+_(Always ensure sensitive or personally identifiable information (PII) is
+protected or redacted according to data governance policies)_.
 * **Decouple evaluation logic**: Allow swapping evaluation strategies without
 modifying agent logic.
 * **Define tool policies**: Make tool usage contracts explicit to simplify
