@@ -42,6 +42,7 @@ more detail, just keep reading the next chapters.
 - [Memory](./docs/memory/Memory.md)
 - [Agents communication](docs/agents-communication/Agents-Communication.md)
 - [Observability](docs/observability/Observability.md)
+- [Evaluation](docs/evaluation/Evaluation.md)
 - [Security](docs/security/Security.md)
 - [Governance](docs/governance/Governance.md)
 - [Reference Architecture](/docs/reference-architecture/Reference-Architecture.md)
