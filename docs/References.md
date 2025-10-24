@@ -34,6 +34,16 @@ _Last updated: 2025-06-30_
 - [Open Telemetry Signals Concepts](https://opentelemetry.io/docs/concepts/signals/)
 - [Observability defined by CNCF](https://www.cncf.io/blog/2024/06/25/your-guide-to-observability-engineering-in-2024/)
 - [Observability in Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/concepts/enterprise-readiness/observability/)
+- [What are evaluators? - Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability#what-are-evaluators)
+- [Agent Evaluation in 2025: Complete Guide](https://orq.ai/blog/agent-evaluation)
+- [AI Agent Observability and Evaluation](https://huggingface.co/learn/agents-course/bonus-unit2/what-is-agent-observability-and-evaluation)
+
+## Evaluation
+
+- [Evaluating Multi-Agent Systems](https://arize.com/docs/phoenix/learn/evaluating-multi-agent-systems)
+- [LLM Evaluation](https://langfuse.com/docs/scores/overview)
+- [Agent evaluators](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/evaluation-evaluators/agent-evaluators)
+- [ToolCallAccuracyEvaluator (Microsoft / .NET)](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.evaluation.quality.toolcallaccuracyevaluator?view=net-9.0-pp)
 
 ## Architecture design
 
