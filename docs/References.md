@@ -86,6 +86,10 @@ _Last updated: 2025-06-30_
 - [Semantic ranking in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/semantic-search-overview)
 - [Semantic Kernel: Make plugins AI-friendly](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/?pivots=programming-language-python#make-plugins-ai-friendly)
 
+## Versioning
+
+- [Why versioning AI agents is the CIO's next big challenge](https://www.cio.com/article/4056453/why-versioning-ai-agents-is-the-cios-next-big-challenge.html)
+
 ---
 
 {{ #include ../components/discuss-button.hbs }}
