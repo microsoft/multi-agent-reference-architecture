@@ -92,4 +92,3 @@ _Last updated: 2025-06-30_
 
 {{ #include ../components/discuss-button.hbs }}
 
-- [Why versioning AI agents is the CIO's next big challenge](https://www.cio.com/article/4056453/why-versioning-ai-agents-is-the-cios-next-big-challenge.html)
