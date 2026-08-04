@@ -2,12 +2,17 @@
 
 # Short-term Memory
 
-_Last updated: 2025-05-26_
+_Last updated: 2026-08-04_
 
 When building the STM (Short-Term Memory) layer for a multi-agent system, the
 storage engine choice is critical. STM typically serves to persist conversation
 history, contextual state, and intermediary data that agents use to manage
 context and continuity during workflows.
+
+STM is **session-scoped** and **token-limited**: it lives for as long as the
+session is active, and only a subset of it ever reaches the model. Everything
+that must survive the session belongs in
+[Long-term memory](./Long-Term-Memory.md).
 
 This topic covers:
 
@@ -16,6 +21,11 @@ This topic covers:
   - [Shared memory](#1-shared-memory)
   - [Distributed memory](#2-distributed-memory)
   - [Hybrid memory](#3-hybrid-memory)
+- [Recommended practices](#recommended-practices)
+- [Context window management](#context-window-management)
+- [Working memory assembly](#working-memory-assembly)
+- [Session end](#session-end)
+- [Multi-channel considerations](#multi-channel-considerations)
 - [Data retention](#data-retention)
 
 ---
@@ -97,6 +107,20 @@ Consider designing the documents to capture:
 - **Session Metadata:** Additional data relevant for the session (e.g.
   communication channel, tags).
 - **Timestamp:** When the message was written.
+
+Additionally, consider the fields consumed by the downstream memory pipelines:
+
+- **Session Status:** Whether the session is active, idle, closed, or expired.
+  The session end event that triggers summarization and extraction is derived
+  from this transition.
+- **Summary:** The rolling summary of older turns, so it does not have to be
+  recomputed on every request.
+- **Token Count:** Tokens per message and accumulated per session, used to
+  enforce the context budget and decide when to summarize.
+- **Promotion State:** Whether the session has already been processed by the
+  [session end](#session-end) and
+  [promotion](./Memory-Pipelines.md#stm-to-ltm-promotion-pipeline) pipelines.
+  This makes both pipelines idempotent and safely retryable.
 
 > **Leverage chat history message objects from agentic frameworks rather than
 > normalizing data when possible**. Frameworks such as Semantic Kernel and
@@ -253,6 +277,145 @@ the isolated collections.
 
 ---
 
+## Context Window Management
+
+Storage keeps the whole session; the model does not. The context window is a
+fixed token budget shared by the system prompt, the injected user profile, the
+retrieved long-term facts, and the recent turns. A **token-limit mechanism is
+mandatory** — without it, sessions fail abruptly once they outgrow the model
+context size.
+
+### Sliding Window
+
+The simplest mechanism keeps the last _N_ turns verbatim and drops everything
+older. It is cheap and predictable, but it discards decisions and constraints
+agreed earlier in the session, which is exactly the context users assume the
+agent still has.
+
+### Progressive Summarization
+
+As the session approaches the context limit, older turns are compressed into a
+rolling summary that is carried forward while recent turns stay verbatim.
+
+```mermaid
+flowchart LR
+    Turns[Full session history] --> Check{Approaching<br/>token limit?}
+    Check -- No --> Window[Recent turns verbatim]
+    Check -- Yes --> Summarize[Summarize oldest turns]
+    Summarize --> Summary[(Rolling summary)]
+    Summary --> Window
+    Window --> Context[Context for next inference]
+```
+
+Recommendations:
+
+- **Trigger on a threshold, not on the hard limit** (for example, at 70-80% of
+  the budget), so summarization never competes with the current request.
+- **Persist the summary in the session document** and update it incrementally,
+  rather than re-summarizing the entire history each time.
+- **Preserve decisions, constraints, identifiers, and open items verbatim.**
+  Summaries lose exactly the details that later turns depend on, and
+  over-compression is a common source of fabricated context.
+- **Keep the raw history in STM storage** even when it is no longer sent to the
+  model — it is required for auditing and for the session end pipeline.
+
+### Thread Resumption
+
+When a user returns to an existing conversation thread after a gap, the session
+context no longer exists in the process memory. Before inferencing, the thread
+must be reconstructed: load the session document, produce (or reuse) a thread
+summary, and send that summary plus the most recent turns to the model.
+
+For long-lived threads, treat resumption as a first-class path: it is where
+context loss is most visible to the user, and where a stale or missing summary
+turns into an obvious regression.
+
+---
+
+## Working Memory Assembly
+
+Working memory is what the model actually sees for a single request. It is
+assembled per turn from four sources, each with its own share of the token
+budget:
+
+| Section                | Source                           | Typical budget behavior                  |
+| ---------------------- | -------------------------------- | ---------------------------------------- |
+| System prompt          | Static configuration             | Fixed, reserved first                    |
+| Semantic profile       | Long-term memory (auto-injected) | Small and capped; curated, not unbounded |
+| Retrieved memories     | Long-term memory (on demand)     | Variable, filled by relevance ranking    |
+| Recent turns + summary | Short-term memory                | Remainder of the budget                  |
+
+Guidelines:
+
+- **Reserve the budget in priority order** — instructions first, then durable
+  profile, then retrieved memories, then recent history — and let the lowest
+  priority section absorb the truncation.
+- **Cap each section explicitly.** An uncapped profile or an uncapped retrieval
+  result set will silently starve the conversation history.
+- **Label the provenance of each block** in the prompt (profile, retrieved
+  memory, conversation) so the model can weigh them differently and so the
+  assembled context stays debuggable.
+- **Leave headroom for the response.** The output tokens come out of the same
+  window.
+
+The full read path, including ranking and budget allocation across both memory
+tiers, is described in
+[Memory pipelines](./Memory-Pipelines.md#memory-retrieval-pipeline).
+
+---
+
+## Session End
+
+When a session closes, expires, or goes idle beyond a threshold, three distinct
+decisions must be made about its content:
+
+1. **Discard** transient working state that has no value beyond the session
+   (intermediate tool payloads, retry scaffolding, partial plans).
+2. **Archive** the raw conversation to cold storage for cost, analytics, and
+   compliance — see [Data retention](#data-retention).
+3. **Promote** the durable signal (preferences, decisions, entities, outcomes)
+   toward long-term memory.
+
+> Archiving and promotion are different paths and must not be conflated.
+> Archiving moves the _transcript_ to cheaper storage for later human or
+> analytical use. Promotion extracts _facts_ that the agent will actively recall
+> in future sessions. A conversation can be archived and never promoted.
+
+The session end event triggers summarization, fact extraction, embedding
+generation, and conflict resolution against existing entries. That flow is
+described in detail in
+[Memory pipelines](./Memory-Pipelines.md#stm-session-end-pipeline), and the
+subsequent promotion into long-term memory in
+[STM to LTM promotion](./Memory-Pipelines.md#stm-to-ltm-promotion-pipeline).
+
+Because sessions may never be explicitly closed, define an **inactivity
+timeout** that emits the same event, and make the downstream processing
+idempotent using the `promotion_state` field.
+
+---
+
+## Multi-Channel Considerations
+
+Session boundaries are channel-specific, and getting them wrong is a frequent
+source of both context loss and context leakage.
+
+| Channel                    | Session characteristics                     | Implications                                                            |
+| -------------------------- | ------------------------------------------- | ----------------------------------------------------------------------- |
+| **Asynchronous messaging** | Long gaps between messages, no explicit end | Long inactivity timeouts, thread summaries, resumption path is the norm |
+| **Web chat**               | Synchronous, short, explicit start and end  | Short timeouts, simple sliding window is often enough                   |
+| **Internal tools**         | Persistent project or ticket context        | Session bound to the work item rather than to time                      |
+
+Recommendations:
+
+- **Share the durable profile across channels**, so a user is recognized
+  everywhere.
+- **Do not leak raw conversation history across channels.** Keep episodic STM
+  channel-scoped unless there is an explicit reason to share it.
+- **Record the channel on every session** so retention, summarization, and
+  promotion policies can differ per channel.
+
+---
+
 ## Data Retention
 
 While STM is suitable for hot, fast-access storage, it is recommended to archive
@@ -274,6 +437,9 @@ a set number of days. This practice serves several key purposes:
    documents from STM to a cold storage.
 3. **Indexing for Analytics:** Optionally, batch-load archived data into an
    analytics warehouse for reporting and custom queries.
+4. **Promote Before Archiving:** Ensure the session end and promotion pipelines
+   have processed a session (check `promotion_state`) before its documents leave
+   hot storage, otherwise durable facts are lost with the transcript.
 
 ---
 

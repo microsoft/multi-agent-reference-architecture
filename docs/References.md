@@ -25,6 +25,7 @@ _Last updated: 2025-06-30_
 ## Memory
 
 - [How Microsoft Copilot scales to millions of users with Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/how-microsoft-copilot-scales-to-millions-of-users-with-azure-cosmos-db/)
+- [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413)
 
 ## Observability
 
