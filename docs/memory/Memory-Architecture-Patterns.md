@@ -302,5 +302,3 @@ See [Observability](../observability/Observability.md) and
 these signals.
 
 ---
-
-{{ #include ../../components/discuss-button.hbs }}
