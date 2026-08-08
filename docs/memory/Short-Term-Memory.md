@@ -442,5 +442,3 @@ a set number of days. This practice serves several key purposes:
    hot storage, otherwise durable facts are lost with the transcript.
 
 ---
-
-{{ #include ../../components/discuss-button.hbs }}
