@@ -223,5 +223,3 @@ Promoted entries then enter the
 reinforces them and disuse gradually demotes them across tiers.
 
 ---
-
-{{ #include ../../components/discuss-button.hbs }}
