@@ -502,5 +502,3 @@ governed memory layer.
 > Start simple and let measured impact justify each subsequent phase.
 
 ---
-
-{{ #include ../../components/discuss-button.hbs }}
